@@ -44,10 +44,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>Sugar, corn syrup, coating (sugar, vegetable oil [palm kernel and hydrogenated palm kernel oils], nonfat dry milk solids, whole milk solids, soy lecithin, natural flavor, salt, artificial flavor), water, palm and palm kernel oils, low fat cocoa processed with alkali, dextrose, gelatin, and contains 2% or less of the following: natural cocoa flavor, cocoa processed with alkali, corn starch, salt, powdered sugar (sugar, corn starch), tetrasodium pyrophosphate, polyglycerol esters of fatty acids, mono- and diglycerides, natural peppermint flavor, red 40 lake.</valuetext>
+          <valuetext>INSERT CONFIDENTIAL INGREDIENTS</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("CPB Marshmallow") = 'T' AND "Ingredient Statement" != 'Sugar, corn syrup, coating (sugar, vegetable oil [palm kernel and hydrogenated palm kernel oils], nonfat dry milk solids, whole milk solids, soy lecithin, natural flavor, salt, artificial flavor), water, palm and palm kernel oils, low fat cocoa processed with alkali, dextrose, gelatin, and contains 2% or less of the following: natural cocoa flavor, cocoa processed with alkali, corn starch, salt, powdered sugar (sugar, corn starch), tetrasodium pyrophosphate, polyglycerol esters of fatty acids, mono- and diglycerides, natural peppermint flavor, red 40 lake.']]></formula>
+            <formula><![CDATA[isChecked("CPB Marshmallow") = 'T' AND "Ingredient Statement" != 'INSERT CONFIDENTIAL INGREDIENTS']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -79,10 +79,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>exterior surface that is smooth with the minimal appearance of wrinkles or “skinning”, color should be a cocoa brown with minimal exposed red center; tops of marshmallow should have a small tail; bottoms should have little to no wrinkling</valuetext>
+          <valuetext>INSERT CONFIDENTIAL APPEARANCE DESCRIPTION</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("CPB Marshmallow") = 'T' AND "Appearance" != 'exterior surface that is smooth with the minimal appearance of wrinkles or “skinning”, color should be a cocoa brown with minimal exposed red center; tops of marshmallow should have a small tail; bottoms should have little to no wrinkling']]></formula>
+            <formula><![CDATA[isChecked("CPB Marshmallow") = 'T' AND "Appearance" != 'INSERT CONFIDENTIAL APPEARANCE DESCRIPTION']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -114,10 +114,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>soft bite and chew with limited gummy texture on the marshmallow base; peppermint base should be smooth and free of excessive grainy or powdery texture – product can be melted for additional evaluation; overall flavor should have a hint of peppermint but not be overwhelming; manual texture should be free of excessive powder and not sticky to the touch</valuetext>
+          <valuetext>INSERT CONFIDENTIAL FLAVOR/TEXTURE DESCRIPTION</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("CPB Marshmallow") = 'T' AND "Flavor and Texture" != 'soft bite and chew with limited gummy texture on the marshmallow base; peppermint base should be smooth and free of excessive grainy or powdery texture – product can be melted for additional evaluation; overall flavor should have a hint of peppermint but not be overwhelming; manual texture should be free of excessive powder and not sticky to the touch' AND isChecked("Valentine Marshmallow") = 'F']]></formula>
+            <formula><![CDATA[isChecked("CPB Marshmallow") = 'T' AND "Flavor and Texture" != 'INSERT CONFIDENTIAL FLAVOR/TEXTURE DESCRIPTION']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -127,10 +127,6 @@
               <parameter>
                 <name>Flavor and Texture</name>
                 <value>[scriptid=custitemflavor_texture]</value>
-              </parameter>
-              <parameter>
-                <name>Valentine Marshmallow</name>
-                <value>[scriptid=custitemvalentine_flavor]</value>
               </parameter>
             </parameters>
           </initcondition>
