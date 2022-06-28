@@ -44,10 +44,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>sprinkles (sugar, corn starch, palm oil and palm kernel oil, soy lecithin, dextrin, confectioner&apos;s glaze, carnauba wax, yellow 5 lake, yellow 6 lake, blue 1 lake, red 40 lake), sugar, corn syrup, milk chocolate (sugar, cocoa butter, unsweetened chocolate, whole milk powder, soy lecithin, natural vanilla extract), water, palm and palm kernel oils, and contains 2% or less of the following: dextrose, gelatin, corn starch, artificial flavor, yellow 5, blue 1, tetra sodium pyrophosphate, mono- and diglycerides, polyglycerol esters of fatty acids.</valuetext>
+          <valuetext>INSERT CONFIDENTIAL INGREDIENTS</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("MM Marshmallow") = 'T' AND "Ingredient Statement" != 'sprinkles (sugar, corn starch, palm oil and palm kernel oil, soy lecithin, dextrin, confectioner''s glaze, carnauba wax, yellow 5 lake, yellow 6 lake, blue 1 lake, red 40 lake), sugar, corn syrup, milk chocolate (sugar, cocoa butter, unsweetened chocolate, whole milk powder, soy lecithin, natural vanilla extract), water, palm and palm kernel oils, and contains 2% or less of the following: dextrose, gelatin, corn starch, artificial flavor, yellow 5, blue 1, tetra sodium pyrophosphate, mono- and diglycerides, polyglycerol esters of fatty acids.']]></formula>
+            <formula><![CDATA[isChecked("MM Marshmallow") = 'T' AND "Ingredient Statement" != 'INSERT CONFIDENTIAL INGREDIENTS']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -79,10 +79,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>exterior surface should have even distribution of green, black and orange sprinkle pieces with a target of 90% coverage or better. Any visible marshmallow surface should be a bright green color with the minimal appearance of wrinkles or “skinning”.</valuetext>
+          <valuetext>INSERT CONFIDENTIAL APPEARANCE DESCRIPTION</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("MM Marshmallow") = 'T' AND "Appearance" != 'exterior surface should have even distribution of green, black and orange sprinkle pieces with a target of 90% coverage or better. Any visible marshmallow surface should be a bright green color with the minimal appearance of wrinkles or “skinning”.']]></formula>
+            <formula><![CDATA[isChecked("MM Marshmallow") = 'T' AND "Appearance" != 'INSERT CONFIDENTIAL APPEARANCE DESCRIPTION']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -114,10 +114,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>external piece should have sprinkles that crumble easily upon bite, with a slightly sweet flavor, product should have a soft bite and chew with limited gummy texture on the marshmallow base; chocolate should be smooth and free of excessive grainy or powdery texture – product can be melted for additional evaluation; overall flavor should have a hint of vanilla</valuetext>
+          <valuetext>INSERT CONFIDENTIAL FLAVOR/TEXTURE DESCRIPTION</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("MM Marshmallow") = 'T' AND "Flavor and Texture" != 'external piece should have sprinkles that crumble easily upon bite, with a slightly sweet flavor, product should have a soft bite and chew with limited gummy texture on the marshmallow base; chocolate should be smooth and free of excessive grainy or powdery texture – product can be melted for additional evaluation; overall flavor should have a hint of vanilla']]></formula>
+            <formula><![CDATA[isChecked("MM Marshmallow") = 'T' AND "Flavor and Texture" != 'INSERT CONFIDENTIAL FLAVOR/TEXTURE DESCRIPTION']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
