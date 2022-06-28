@@ -44,10 +44,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>sugar, corn syrup, milk chocolate (sugar, whole milk powder, cocoa butter, unsweetened chocolate, soy lecithin, natural flavor), water, palm oil and palm kernel oil, dextrose, gelatin, and contains 2% or less of the following: corn starch, Red 40, modified corn starch, artificial flavor, tetrasodium pyrophosphate, powdered sugar (sugar, corn starch), polyglycerol esters of fatty acids, mono and diglycerides.</valuetext>
+          <valuetext>INSERT CONFIDENTIAL INGREDIENTS</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("Valentine Marshmallow") = 'T' AND "Ingredient Statement" != 'sugar, corn syrup, milk chocolate (sugar, whole milk powder, cocoa butter, unsweetened chocolate, soy lecithin, natural flavor), water, palm oil and palm kernel oil, dextrose, gelatin, and contains 2% or less of the following: corn starch, Red 40, modified corn starch, artificial flavor, tetrasodium pyrophosphate, powdered sugar (sugar, corn starch), polyglycerol esters of fatty acids, mono and diglycerides.']]></formula>
+            <formula><![CDATA[isChecked("Valentine Marshmallow") = 'T' AND "Ingredient Statement" != 'INSERT CONFIDENTIAL INGREDIENTS']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -79,10 +79,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>heart-shaped classic milk chocolate marshmallow, exterior surface that is smooth with the minimal appearance of wrinkles or “skinning”, color should be pink with no exposed chocolate</valuetext>
+          <valuetext>INSERT CONFIDENTIAL APPEARANCE DESCRIPTION</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("Valentine Marshmallow") = 'T' AND "Appearance" != 'heart-shaped classic milk chocolate marshmallow, exterior surface that is smooth with the minimal appearance of wrinkles or “skinning”, color should be pink with no exposed chocolate']]></formula>
+            <formula><![CDATA[isChecked("Valentine Marshmallow") = 'T' AND "Appearance" != 'INSERT CONFIDENTIAL APPEARANCE DESCRIPTION']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -114,10 +114,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>soft bite and chew with limited gummy texture on the marshmallow base; chocolate should be smooth and free of excessive grainy or powdery texture – product can be melted for additional evaluation; manual texture should be free of excessive powder and not sticky to the touch</valuetext>
+          <valuetext>INSERT CONFIDENTIAL FLAVOR/TEXTURE DESCRIPTION</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("Valentine Marshmallow") = 'T' AND "Flavor and Texture" != 'soft bite and chew with limited gummy texture on the marshmallow base; chocolate should be smooth and free of excessive grainy or powdery texture – product can be melted for additional evaluation; manual texture should be free of excessive powder and not sticky to the touch']]></formula>
+            <formula><![CDATA[isChecked("Valentine Marshmallow") = 'T' AND "Flavor and Texture" != 'INSERT CONFIDENTIAL FLAVOR/TEXTURE DESCRIPTION']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
