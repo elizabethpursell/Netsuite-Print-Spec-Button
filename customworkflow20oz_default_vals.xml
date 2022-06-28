@@ -44,10 +44,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>20.0 ounces, 567 grams</valuetext>
+          <valuetext>INSERT CONFIDENTIAL NET WEIGHT</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("20 oz Weight Settings") = 'T' AND "Net Weight" != '20.0 ounces, 567 grams']]></formula>
+            <formula><![CDATA[isChecked("20 oz Weight Settings") = 'T' AND "Net Weight" != 'INSERT CONFIDENTIAL NET WEIGHT']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -79,10 +79,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>551 - 591 g</valuetext>
+          <valuetext>INSERT CONFIDENTIAL CHECKWEIGHER SETTINGS</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("20 oz Weight Settings") = 'T' AND "Checkweigher Settings" != '551 - 591 g']]></formula>
+            <formula><![CDATA[isChecked("20 oz Weight Settings") = 'T' AND "Checkweigher Settings" != 'INSERT CONFIDENTIAL CHECKWEIGHER SETTINGS']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -114,10 +114,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>21.7</valuetext>
+          <valuetext>INSERT CONFIDENTIAL MAV</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("20 oz Weight Settings") = 'T' AND "MAV (g)" != 21.7]]></formula>
+            <formula><![CDATA[isChecked("20 oz Weight Settings") = 'T' AND "MAV (g)" != INSERT CONFIDENTIAL MAV]]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -149,10 +149,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>545</valuetext>
+          <valuetext>INSERT CONFIDENTIAL MIN WEIGHT</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("20 oz Weight Settings") = 'T' AND "Lowest Allowable Package Value (g)" != 545]]></formula>
+            <formula><![CDATA[isChecked("20 oz Weight Settings") = 'T' AND "Lowest Allowable Package Value (g)" != INSERT CONFIDENTIAL MIN WEIGHT]]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
