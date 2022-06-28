@@ -1,0 +1,137 @@
+<workflow scriptid="customworkflowcmc_default_vals">
+  <description>sets default values for spec fields for CMC</description>
+  <initcontexts>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</initcontexts>
+  <initeventtypes></initeventtypes>
+  <initlocalizationcontext></initlocalizationcontext>
+  <initoncreate>T</initoncreate>
+  <initonvieworupdate>T</initonvieworupdate>
+  <initsavedsearchcondition></initsavedsearchcondition>
+  <inittriggertype>BEFORELOAD</inittriggertype>
+  <isinactive>F</isinactive>
+  <islogenabled>F</islogenabled>
+  <keephistory>ONLYWHENTESTING</keephistory>
+  <name>Spec CMC Default Values</name>
+  <recordtypes>LOTNUMBEREDASSEMBLYITEM</recordtypes>
+  <releasestatus>RELEASED</releasestatus>
+  <runasadmin>F</runasadmin>
+  <initcondition>
+    <formula></formula>
+    <type>VISUAL_BUILDER</type>
+  </initcondition>
+  <workflowstates>
+    <workflowstate scriptid="workflowstate84">
+      <description></description>
+      <donotexitworkflow>F</donotexitworkflow>
+      <name>State 1</name>
+      <positionx>243</positionx>
+      <positiony>133</positiony>
+      <workflowactions triggertype="AFTERFIELDEDIT">
+        <setfieldvalueaction scriptid="workflowactioncmc_ingredients">
+          <clienttriggerfields>[scriptid=custitembcc_flavor]|[scriptid=custitemcmc_flavor]|[scriptid=custitemcnc_flavor]|[scriptid=custitemcoc_flavor]|[scriptid=custitemcpb_flavor]|[scriptid=custitemeaster_flavor]|[scriptid=custitemmm_flavor]|[scriptid=custitemsmc_flavor]|[scriptid=custitemvalentine_flavor]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custitemingredients]</field>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <valuechecked>F</valuechecked>
+          <valuedate></valuedate>
+          <valuefield></valuefield>
+          <valueformula></valueformula>
+          <valuejoinfield></valuejoinfield>
+          <valueselect></valueselect>
+          <valuetext>Sugar, corn syrup, milk chocolate (sugar, cocoa butter, unsweetened chocolate, whole milk powder, soy lecithin, natural vanilla extract), water, palm and palm kernel oils, gelatin, dextrose, and contains 2% or less of the following: corn starch, modified corn starch, blue 1, artificial flavor, tetrasodium pyrophosphate, powdered sugar (sugar, corn starch), mono- and diglycerides, polyglycerol esters of fatty acids. Contains milk, wheat, soy. </valuetext>
+          <valuetype>STATIC</valuetype>
+          <initcondition>
+            <formula><![CDATA[isChecked("CMC Marshmallow") = 'T' AND "Ingredient Statement" != 'Sugar, corn syrup, milk chocolate (sugar, cocoa butter, unsweetened chocolate, whole milk powder, soy lecithin, natural vanilla extract), water, palm and palm kernel oils, gelatin, dextrose, and contains 2% or less of the following: corn starch, modified corn starch, blue 1, artificial flavor, tetrasodium pyrophosphate, powdered sugar (sugar, corn starch), mono- and diglycerides, polyglycerol esters of fatty acids. Contains milk, wheat, soy.']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>CMC Marshmallow</name>
+                <value>[scriptid=custitemcmc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Ingredient Statement</name>
+                <value>[scriptid=custitemingredients]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldvalueaction>
+        <setfieldvalueaction scriptid="workflowactioncmc_appearance">
+          <clienttriggerfields>[scriptid=custitembcc_flavor]|[scriptid=custitemcmc_flavor]|[scriptid=custitemcnc_flavor]|[scriptid=custitemcoc_flavor]|[scriptid=custitemcpb_flavor]|[scriptid=custitemeaster_flavor]|[scriptid=custitemmm_flavor]|[scriptid=custitemsmc_flavor]|[scriptid=custitemvalentine_flavor]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custitemappearance]</field>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <valuechecked>F</valuechecked>
+          <valuedate></valuedate>
+          <valuefield></valuefield>
+          <valueformula></valueformula>
+          <valuejoinfield></valuejoinfield>
+          <valueselect></valueselect>
+          <valuetext>exterior surface that is smooth with the minimal appearance of wrinkles or &quot;skinning&quot;, color should be a bright white with minimal opacity (exposed chocolate); tops of marshmallow should have a small tail; bottoms should have little to no wrinkling.</valuetext>
+          <valuetype>STATIC</valuetype>
+          <initcondition>
+            <formula><![CDATA[isChecked("CMC Marshmallow") = 'T' AND "Appearance" != 'exterior surface that is smooth with the minimal appearance of wrinkles or "skinning", color should be a bright white with minimal opacity (exposed chocolate); tops of marshmallow should have a small tail; bottoms should have little to no wrinkling.']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>CMC Marshmallow</name>
+                <value>[scriptid=custitemcmc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Appearance</name>
+                <value>[scriptid=custitemappearance]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldvalueaction>
+        <setfieldvalueaction scriptid="workflowactioncmc_flavor_texture">
+          <clienttriggerfields>[scriptid=custitembcc_flavor]|[scriptid=custitemcmc_flavor]|[scriptid=custitemcnc_flavor]|[scriptid=custitemcoc_flavor]|[scriptid=custitemcpb_flavor]|[scriptid=custitemeaster_flavor]|[scriptid=custitemmm_flavor]|[scriptid=custitemsmc_flavor]|[scriptid=custitemvalentine_flavor]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custitemflavor_texture]</field>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <valuechecked>F</valuechecked>
+          <valuedate></valuedate>
+          <valuefield></valuefield>
+          <valueformula></valueformula>
+          <valuejoinfield></valuejoinfield>
+          <valueselect></valueselect>
+          <valuetext>soft bite and chew with limited gummy texture on the marshmallow base; chocolate should be smooth and free of excessive grainy or powdery texture – product can be melted for additional evaluation; overall flavor should have a hint of vanilla; manual texture should be free of excessive powder and not sticky to the touch </valuetext>
+          <valuetype>STATIC</valuetype>
+          <initcondition>
+            <formula><![CDATA[isChecked("CMC Marshmallow") = 'T' AND "Flavor and Texture" != 'soft bite and chew with limited gummy texture on the marshmallow base; chocolate should be smooth and free of excessive grainy or powdery texture – product can be melted for additional evaluation; overall flavor should have a hint of vanilla; manual texture should be free of excessive powder and not sticky to the touch']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>CMC Marshmallow</name>
+                <value>[scriptid=custitemcmc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Flavor and Texture</name>
+                <value>[scriptid=custitemflavor_texture]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldvalueaction>
+      </workflowactions>
+    </workflowstate>
+  </workflowstates>
+</workflow>

@@ -1,0 +1,233 @@
+<workflow scriptid="customworkflowclear_flavor_vals">
+  <description>clears the marshmallow flavor preset values</description>
+  <initcontexts>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</initcontexts>
+  <initeventtypes></initeventtypes>
+  <initlocalizationcontext></initlocalizationcontext>
+  <initoncreate>T</initoncreate>
+  <initonvieworupdate>T</initonvieworupdate>
+  <initsavedsearchcondition></initsavedsearchcondition>
+  <inittriggertype>BEFORELOAD</inittriggertype>
+  <isinactive>F</isinactive>
+  <islogenabled>F</islogenabled>
+  <keephistory>ONLYWHENTESTING</keephistory>
+  <name>Clear Marshmallow Flavor Presets</name>
+  <recordtypes>LOTNUMBEREDASSEMBLYITEM</recordtypes>
+  <releasestatus>RELEASED</releasestatus>
+  <runasadmin>F</runasadmin>
+  <initcondition>
+    <formula></formula>
+    <type>VISUAL_BUILDER</type>
+  </initcondition>
+  <workflowstates>
+    <workflowstate scriptid="workflowstate78">
+      <description></description>
+      <donotexitworkflow>F</donotexitworkflow>
+      <name>State 1</name>
+      <positionx>243</positionx>
+      <positiony>133</positiony>
+      <workflowactions triggertype="AFTERFIELDEDIT">
+        <setfieldvalueaction scriptid="workflowactionclear_ingredients">
+          <clienttriggerfields>[scriptid=custitembcc_flavor]|[scriptid=custitemclear_flavor_resets]|[scriptid=custitemcmc_flavor]|[scriptid=custitemcnc_flavor]|[scriptid=custitemcoc_flavor]|[scriptid=custitemcpb_flavor]|[scriptid=custitemeaster_flavor]|[scriptid=custitemmm_flavor]|[scriptid=custitemsmc_flavor]|[scriptid=custitemvalentine_flavor]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custitemingredients]</field>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <valuechecked>F</valuechecked>
+          <valuedate></valuedate>
+          <valuefield></valuefield>
+          <valueformula></valueformula>
+          <valuejoinfield></valuejoinfield>
+          <valueselect></valueselect>
+          <valuetext></valuetext>
+          <valuetype>STATIC</valuetype>
+          <initcondition>
+            <formula><![CDATA[isChecked("Clear Marshmallow Flavor Presets") = 'T' AND isChecked("BCC Marshmallow") = 'F' AND isChecked("CNC Marshmallow") = 'F' AND isChecked("CMC Marshmallow") = 'F' AND isChecked("COC Marshmallow") = 'F' AND isChecked("CPB Marshmallow") = 'F' AND isChecked("Easter Marshmallow") = 'F' AND isChecked("MM Marshmallow") = 'F' AND isChecked("SMC Marshmallow") = 'F' AND isChecked("Valentine Marshmallow") = 'F']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Clear Marshmallow Flavor Presets</name>
+                <value>[scriptid=custitemclear_flavor_resets]</value>
+              </parameter>
+              <parameter>
+                <name>BCC Marshmallow</name>
+                <value>[scriptid=custitembcc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>CNC Marshmallow</name>
+                <value>[scriptid=custitemcnc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>CMC Marshmallow</name>
+                <value>[scriptid=custitemcmc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>COC Marshmallow</name>
+                <value>[scriptid=custitemcoc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>CPB Marshmallow</name>
+                <value>[scriptid=custitemcpb_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Easter Marshmallow</name>
+                <value>[scriptid=custitemeaster_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>MM Marshmallow</name>
+                <value>[scriptid=custitemmm_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>SMC Marshmallow</name>
+                <value>[scriptid=custitemsmc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Valentine Marshmallow</name>
+                <value>[scriptid=custitemvalentine_flavor]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldvalueaction>
+        <setfieldvalueaction scriptid="workflowactionclear_appearance">
+          <clienttriggerfields>[scriptid=custitembcc_flavor]|[scriptid=custitemclear_flavor_resets]|[scriptid=custitemcmc_flavor]|[scriptid=custitemcnc_flavor]|[scriptid=custitemcoc_flavor]|[scriptid=custitemcpb_flavor]|[scriptid=custitemeaster_flavor]|[scriptid=custitemmm_flavor]|[scriptid=custitemsmc_flavor]|[scriptid=custitemvalentine_flavor]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custitemappearance]</field>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <valuechecked>F</valuechecked>
+          <valuedate></valuedate>
+          <valuefield></valuefield>
+          <valueformula></valueformula>
+          <valuejoinfield></valuejoinfield>
+          <valueselect></valueselect>
+          <valuetext></valuetext>
+          <valuetype>STATIC</valuetype>
+          <initcondition>
+            <formula><![CDATA[isChecked("Clear Marshmallow Flavor Presets") = 'T' AND isChecked("BCC Marshmallow") = 'F' AND isChecked("CNC Marshmallow") = 'F' AND isChecked("CMC Marshmallow") = 'F' AND isChecked("COC Marshmallow") = 'F' AND isChecked("CPB Marshmallow") = 'F' AND isChecked("Easter Marshmallow") = 'F' AND isChecked("MM Marshmallow") = 'F' AND isChecked("SMC Marshmallow") = 'F' AND isChecked("Valentine Marshmallow") = 'F']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Clear Marshmallow Flavor Presets</name>
+                <value>[scriptid=custitemclear_flavor_resets]</value>
+              </parameter>
+              <parameter>
+                <name>BCC Marshmallow</name>
+                <value>[scriptid=custitembcc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>CNC Marshmallow</name>
+                <value>[scriptid=custitemcnc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>CMC Marshmallow</name>
+                <value>[scriptid=custitemcmc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>COC Marshmallow</name>
+                <value>[scriptid=custitemcoc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>CPB Marshmallow</name>
+                <value>[scriptid=custitemcpb_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Easter Marshmallow</name>
+                <value>[scriptid=custitemeaster_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>MM Marshmallow</name>
+                <value>[scriptid=custitemmm_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>SMC Marshmallow</name>
+                <value>[scriptid=custitemsmc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Valentine Marshmallow</name>
+                <value>[scriptid=custitemvalentine_flavor]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldvalueaction>
+        <setfieldvalueaction scriptid="workflowactionclear_flavor_texture">
+          <clienttriggerfields>[scriptid=custitembcc_flavor]|[scriptid=custitemclear_flavor_resets]|[scriptid=custitemcmc_flavor]|[scriptid=custitemcnc_flavor]|[scriptid=custitemcoc_flavor]|[scriptid=custitemcpb_flavor]|[scriptid=custitemeaster_flavor]|[scriptid=custitemmm_flavor]|[scriptid=custitemsmc_flavor]|[scriptid=custitemvalentine_flavor]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custitemflavor_texture]</field>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <valuechecked>F</valuechecked>
+          <valuedate></valuedate>
+          <valuefield></valuefield>
+          <valueformula></valueformula>
+          <valuejoinfield></valuejoinfield>
+          <valueselect></valueselect>
+          <valuetext></valuetext>
+          <valuetype>STATIC</valuetype>
+          <initcondition>
+            <formula><![CDATA[isChecked("Clear Marshmallow Flavor Presets") = 'T' AND isChecked("BCC Marshmallow") = 'F' AND isChecked("CNC Marshmallow") = 'F' AND isChecked("COC Marshmallow") = 'F' AND isChecked("CMC Marshmallow") = 'F' AND isChecked("CPB Marshmallow") = 'F' AND isChecked("Easter Marshmallow") = 'F' AND isChecked("MM Marshmallow") = 'F' AND isChecked("SMC Marshmallow") = 'F' AND isChecked("Valentine Marshmallow") = 'F']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Clear Marshmallow Flavor Presets</name>
+                <value>[scriptid=custitemclear_flavor_resets]</value>
+              </parameter>
+              <parameter>
+                <name>BCC Marshmallow</name>
+                <value>[scriptid=custitembcc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>CNC Marshmallow</name>
+                <value>[scriptid=custitemcnc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>COC Marshmallow</name>
+                <value>[scriptid=custitemcoc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>CMC Marshmallow</name>
+                <value>[scriptid=custitemcmc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>CPB Marshmallow</name>
+                <value>[scriptid=custitemcpb_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Easter Marshmallow</name>
+                <value>[scriptid=custitemeaster_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>MM Marshmallow</name>
+                <value>[scriptid=custitemmm_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>SMC Marshmallow</name>
+                <value>[scriptid=custitemsmc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Valentine Marshmallow</name>
+                <value>[scriptid=custitemvalentine_flavor]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldvalueaction>
+      </workflowactions>
+    </workflowstate>
+  </workflowstates>
+</workflow>

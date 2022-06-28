@@ -1,0 +1,137 @@
+<workflow scriptid="customworkflowsmc_default_vals">
+  <description>sets default values for spec fields for SMC</description>
+  <initcontexts>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</initcontexts>
+  <initeventtypes></initeventtypes>
+  <initlocalizationcontext></initlocalizationcontext>
+  <initoncreate>T</initoncreate>
+  <initonvieworupdate>T</initonvieworupdate>
+  <initsavedsearchcondition></initsavedsearchcondition>
+  <inittriggertype>BEFORELOAD</inittriggertype>
+  <isinactive>F</isinactive>
+  <islogenabled>F</islogenabled>
+  <keephistory>ONLYWHENTESTING</keephistory>
+  <name>Spec SMC Default Values</name>
+  <recordtypes>LOTNUMBEREDASSEMBLYITEM</recordtypes>
+  <releasestatus>RELEASED</releasestatus>
+  <runasadmin>F</runasadmin>
+  <initcondition>
+    <formula></formula>
+    <type>VISUAL_BUILDER</type>
+  </initcondition>
+  <workflowstates>
+    <workflowstate scriptid="workflowstate72">
+      <description></description>
+      <donotexitworkflow>F</donotexitworkflow>
+      <name>State 1</name>
+      <positionx>243</positionx>
+      <positiony>133</positiony>
+      <workflowactions triggertype="AFTERFIELDEDIT">
+        <setfieldvalueaction scriptid="workflowactionsmc_ingredients">
+          <clienttriggerfields>[scriptid=custitembcc_flavor]|[scriptid=custitemcmc_flavor]|[scriptid=custitemcnc_flavor]|[scriptid=custitemcoc_flavor]|[scriptid=custitemcpb_flavor]|[scriptid=custitemeaster_flavor]|[scriptid=custitemmm_flavor]|[scriptid=custitemsmc_flavor]|[scriptid=custitemvalentine_flavor]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custitemingredients]</field>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <valuechecked>F</valuechecked>
+          <valuedate></valuedate>
+          <valuefield></valuefield>
+          <valueformula></valueformula>
+          <valuejoinfield></valuejoinfield>
+          <valueselect></valueselect>
+          <valuetext>graham cracker crumbs (enriched flour [wheat flour, malted barley flour, niacin, ferrous sulfate, thiamin, riboflavin, folic acid], graham flour, sugar, sunflower oil, molasses, salt, sodium bicarbonate, vanilla flavor, butter flavor, sodium sulfite), sugar, corn syrup, milk chocolate (sugar, whole milk powder, cocoa butter, unsweetened chocolate, soy lecithin, vanilla extract), water, palm and palm kernel oils, and contains 2% or less of the following: dextrose, gelatin, corn starch, natural and artificial flavors, blue 1, mono-and diglyerides, polyglycerol esters of fatty acids, tetra sodium pyrophosphate, salt.</valuetext>
+          <valuetype>STATIC</valuetype>
+          <initcondition>
+            <formula><![CDATA[isChecked("SMC Marshmallow") = 'T' AND "Ingredient Statement" != 'graham cracker crumbs (enriched flour [wheat flour, malted barley flour, niacin, ferrous sulfate, thiamin, riboflavin, folic acid], graham flour, sugar, sunflower oil, molasses, salt, sodium bicarbonate, vanilla flavor, butter flavor, sodium sulfite), sugar, corn syrup, milk chocolate (sugar, whole milk powder, cocoa butter, unsweetened chocolate, soy lecithin, vanilla extract), water, palm and palm kernel oils, and contains 2% or less of the following: dextrose, gelatin, corn starch, natural and artificial flavors, blue 1, mono-and diglyerides, polyglycerol esters of fatty acids, tetra sodium pyrophosphate, salt.']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>SMC Marshmallow</name>
+                <value>[scriptid=custitemsmc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Ingredient Statement</name>
+                <value>[scriptid=custitemingredients]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldvalueaction>
+        <setfieldvalueaction scriptid="workflowactionsmc_appearance">
+          <clienttriggerfields>[scriptid=custitembcc_flavor]|[scriptid=custitemcmc_flavor]|[scriptid=custitemcnc_flavor]|[scriptid=custitemcoc_flavor]|[scriptid=custitemcpb_flavor]|[scriptid=custitemeaster_flavor]|[scriptid=custitemmm_flavor]|[scriptid=custitemsmc_flavor]|[scriptid=custitemvalentine_flavor]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custitemappearance]</field>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <valuechecked>F</valuechecked>
+          <valuedate></valuedate>
+          <valuefield></valuefield>
+          <valueformula></valueformula>
+          <valuejoinfield></valuejoinfield>
+          <valueselect></valueselect>
+          <valuetext>exterior surface should have even distribution of crushed graham cracker pieces with a target of 90% coverage or better. Any visible marshmallow surface should be bright white and smooth with the minimal appearance of wrinkles or “skinning”.</valuetext>
+          <valuetype>STATIC</valuetype>
+          <initcondition>
+            <formula><![CDATA[isChecked("SMC Marshmallow") = 'T' AND "Appearance" != 'exterior surface should have even distribution of crushed graham cracker pieces with a target of 90% coverage or better. Any visible marshmallow surface should be bright white and smooth with the minimal appearance of wrinkles or “skinning”.']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>SMC Marshmallow</name>
+                <value>[scriptid=custitemsmc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Appearance</name>
+                <value>[scriptid=custitemappearance]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldvalueaction>
+        <setfieldvalueaction scriptid="workflowactionsmc_flavor_texture">
+          <clienttriggerfields>[scriptid=custitembcc_flavor]|[scriptid=custitemcmc_flavor]|[scriptid=custitemcnc_flavor]|[scriptid=custitemcoc_flavor]|[scriptid=custitemcpb_flavor]|[scriptid=custitemeaster_flavor]|[scriptid=custitemmm_flavor]|[scriptid=custitemsmc_flavor]|[scriptid=custitemvalentine_flavor]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custitemflavor_texture]</field>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <valuechecked>F</valuechecked>
+          <valuedate></valuedate>
+          <valuefield></valuefield>
+          <valueformula></valueformula>
+          <valuejoinfield></valuejoinfield>
+          <valueselect></valueselect>
+          <valuetext>external piece should have the traditional graham cracker flavor with mild sweetness, overall product should have a soft bite and chew with limited gummy texture on the marshmallow base; chocolate base should have a smooth bite and rich chocolate flavor, free of excessive grainy or powdery texture – product can be melted for additional evaluation;</valuetext>
+          <valuetype>STATIC</valuetype>
+          <initcondition>
+            <formula><![CDATA[isChecked("SMC Marshmallow") = 'T' AND "Flavor and Texture" != 'external piece should have the traditional graham cracker flavor with mild sweetness, overall product should have a soft bite and chew with limited gummy texture on the marshmallow base; chocolate base should have a smooth bite and rich chocolate flavor, free of excessive grainy or powdery texture – product can be melted for additional evaluation;']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>SMC Marshmallow</name>
+                <value>[scriptid=custitemsmc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Flavor and Texture</name>
+                <value>[scriptid=custitemflavor_texture]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldvalueaction>
+      </workflowactions>
+    </workflowstate>
+  </workflowstates>
+</workflow>

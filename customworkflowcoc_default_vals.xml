@@ -1,0 +1,137 @@
+<workflow scriptid="customworkflowcoc_default_vals">
+  <description>sets default values for spec fields for COC</description>
+  <initcontexts>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</initcontexts>
+  <initeventtypes></initeventtypes>
+  <initlocalizationcontext></initlocalizationcontext>
+  <initoncreate>T</initoncreate>
+  <initonvieworupdate>T</initonvieworupdate>
+  <initsavedsearchcondition></initsavedsearchcondition>
+  <inittriggertype>BEFORELOAD</inittriggertype>
+  <isinactive>F</isinactive>
+  <islogenabled>F</islogenabled>
+  <keephistory>ONLYWHENTESTING</keephistory>
+  <name>Spec COC Default Values</name>
+  <recordtypes>LOTNUMBEREDASSEMBLYITEM</recordtypes>
+  <releasestatus>RELEASED</releasestatus>
+  <runasadmin>F</runasadmin>
+  <initcondition>
+    <formula></formula>
+    <type>VISUAL_BUILDER</type>
+  </initcondition>
+  <workflowstates>
+    <workflowstate scriptid="workflowstate66">
+      <description></description>
+      <donotexitworkflow>F</donotexitworkflow>
+      <name>State 1</name>
+      <positionx>243</positionx>
+      <positiony>133</positiony>
+      <workflowactions triggertype="AFTERFIELDEDIT">
+        <setfieldvalueaction scriptid="workflowactioncoc_ingredients">
+          <clienttriggerfields>[scriptid=custitembcc_flavor]|[scriptid=custitemcmc_flavor]|[scriptid=custitemcnc_flavor]|[scriptid=custitemcoc_flavor]|[scriptid=custitemcpb_flavor]|[scriptid=custitemeaster_flavor]|[scriptid=custitemmm_flavor]|[scriptid=custitemsmc_flavor]|[scriptid=custitemvalentine_flavor]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custitemingredients]</field>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <valuechecked>F</valuechecked>
+          <valuedate></valuedate>
+          <valuefield></valuefield>
+          <valueformula></valueformula>
+          <valuejoinfield></valuejoinfield>
+          <valueselect></valueselect>
+          <valuetext>Sugar, corn syrup, milk chocolate (sugar, whole milk powder, cocoa butter, unsweetened chocolate, soy lecithin, natural flavor), water, palm oil, palm kernel oil, low fat cocoa processed with alkali, dextrose, gelatin, and contains 2% or less of the following: natural flavor, cocoa processed with alkali, corn starch, salt, mono- and diglycerides, polyglycerol esters of fatty acids, powdered sugar (sugar, corn starch), tetra sodium pyrophosphate. Contains: Milk, Wheat, Soy</valuetext>
+          <valuetype>STATIC</valuetype>
+          <initcondition>
+            <formula><![CDATA[isChecked("COC Marshmallow") = 'T' AND "Ingredient Statement" != 'Sugar, corn syrup, milk chocolate (sugar, whole milk powder, cocoa butter, unsweetened chocolate, soy lecithin, natural flavor), water, palm oil, palm kernel oil, low fat cocoa processed with alkali, dextrose, gelatin, and contains 2% or less of the following: natural flavor, cocoa processed with alkali, corn starch, salt, mono- and diglycerides, polyglycerol esters of fatty acids, powdered sugar (sugar, corn starch), tetra sodium pyrophosphate. Contains: Milk, Wheat, Soy']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>COC Marshmallow</name>
+                <value>[scriptid=custitemcoc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Ingredient Statement</name>
+                <value>[scriptid=custitemingredients]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldvalueaction>
+        <setfieldvalueaction scriptid="workflowactioncoc_appearance">
+          <clienttriggerfields>[scriptid=custitembcc_flavor]|[scriptid=custitemcmc_flavor]|[scriptid=custitemcnc_flavor]|[scriptid=custitemcoc_flavor]|[scriptid=custitemcpb_flavor]|[scriptid=custitemeaster_flavor]|[scriptid=custitemmm_flavor]|[scriptid=custitemsmc_flavor]|[scriptid=custitemvalentine_flavor]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custitemappearance]</field>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <valuechecked>F</valuechecked>
+          <valuedate></valuedate>
+          <valuefield></valuefield>
+          <valueformula></valueformula>
+          <valuejoinfield></valuejoinfield>
+          <valueselect></valueselect>
+          <valuetext>exterior surface that is smooth with the minimal appearance of wrinkles or “skinning”, color should be a medium brown with minimal opacity (exposed inner chocolate); tops of marshmallow should have a small tail; bottoms should have little to no wrinkling</valuetext>
+          <valuetype>STATIC</valuetype>
+          <initcondition>
+            <formula><![CDATA[isChecked("COC Marshmallow") = 'T' AND "Appearance" != 'exterior surface that is smooth with the minimal appearance of wrinkles or “skinning”, color should be a medium brown with minimal opacity (exposed inner chocolate); tops of marshmallow should have a small tail; bottoms should have little to no wrinkling']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>COC Marshmallow</name>
+                <value>[scriptid=custitemcoc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Appearance</name>
+                <value>[scriptid=custitemappearance]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldvalueaction>
+        <setfieldvalueaction scriptid="workflowactioncoc_flavor_texture">
+          <clienttriggerfields>[scriptid=custitembcc_flavor]|[scriptid=custitemcmc_flavor]|[scriptid=custitemcnc_flavor]|[scriptid=custitemcoc_flavor]|[scriptid=custitemcpb_flavor]|[scriptid=custitemeaster_flavor]|[scriptid=custitemmm_flavor]|[scriptid=custitemsmc_flavor]|[scriptid=custitemvalentine_flavor]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custitemflavor_texture]</field>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <valuechecked>F</valuechecked>
+          <valuedate></valuedate>
+          <valuefield></valuefield>
+          <valueformula></valueformula>
+          <valuejoinfield></valuejoinfield>
+          <valueselect></valueselect>
+          <valuetext>soft bite and chew with limited gummy texture on the marshmallow base; chocolate should be smooth and free of excessive grainy or powdery texture – product can be melted for additional evaluation; overall flavor should have a hint of vanilla; manual texture should be free of excessive powder and not sticky to the touch</valuetext>
+          <valuetype>STATIC</valuetype>
+          <initcondition>
+            <formula><![CDATA[isChecked("COC Marshmallow") = 'T' AND "Flavor and Texture" != 'soft bite and chew with limited gummy texture on the marshmallow base; chocolate should be smooth and free of excessive grainy or powdery texture – product can be melted for additional evaluation; overall flavor should have a hint of vanilla; manual texture should be free of excessive powder and not sticky to the touch']]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>COC Marshmallow</name>
+                <value>[scriptid=custitemcoc_flavor]</value>
+              </parameter>
+              <parameter>
+                <name>Flavor and Texture</name>
+                <value>[scriptid=custitemflavor_texture]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldvalueaction>
+      </workflowactions>
+    </workflowstate>
+  </workflowstates>
+</workflow>
