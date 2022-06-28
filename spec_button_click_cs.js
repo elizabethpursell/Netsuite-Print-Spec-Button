@@ -30,7 +30,7 @@ define(['N/url', 'N/currentRecord'], function (url, currentRecord) {
         // TODO
     }
     function onButtonClick(){
-        var suiteletURL = url.resolveScript({
+        var suiteletURL = url.resolveScript({     //calls suitelet to generate pdf
             scriptId: 'customscriptspec_suitelet',      //script ID of suitelet
             deploymentId: 'customdeployspec_suitelet',       //deployment ID of suitelet
             returnExternalURL: false,
@@ -38,9 +38,9 @@ define(['N/url', 'N/currentRecord'], function (url, currentRecord) {
                 custom_id: currentRecord.get().id
             }
         });
-        window.open(suiteletURL);
+        window.open(suiteletURL);   //opens rendered pdf in new tab
     }
     exports.onButtonClick = onButtonClick;
     exports.pageInit = pageInit;
     return exports;
-    });
+});
