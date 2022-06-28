@@ -44,10 +44,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>Sugar, Corn Syrup, Coating (Sugar, Vegetable Oil [Palm Kernel Oil, Hydrogenated Palm Kernel Oil], Nonfat Dry Milk Solids, Whole Milk Solids, Soy Lecithin, Natural Flavor, Salt, Artificial Flavor), Water, Cookie Pieces (Enriched Flour [Wheat Flour, Niacin, Reduced Iron, Thiamine Mononitrate, Riboflavin, Folic Acid], Sugar, Palm and/or Canola Oil, Cocoa [Processed With Alkali], High Fructose Corn Syrup, Corn Flour, Salt, Dextrose, Sodium Bicarbonate, Soy Lecithin), Palm Oil, Palm Kernel Oil, Dextrose, Gelatin, Contains 2% or less of the following: Corn Starch, Modified Corn Starch, Blue 1, Natural and Artificial Flavor, Mono- and Diglycerides, Polyglycerol Esters of Fatty Acids, Powdered Sugar (Sugar, Corn Starch), Salt, Tetra Sodium Pyrophosphate. Contains: Milk, Wheat, Soy.</valuetext>
+          <valuetext>INSERT CONFIDENTIAL INGREDIENTS</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("CNC Marshmallow") = 'T' AND "Ingredient Statement" != 'Sugar, Corn Syrup, Coating (Sugar, Vegetable Oil [Palm Kernel Oil, Hydrogenated Palm Kernel Oil], Nonfat Dry Milk Solids, Whole Milk Solids, Soy Lecithin, Natural Flavor, Salt, Artificial Flavor), Water, Cookie Pieces (Enriched Flour [Wheat Flour, Niacin, Reduced Iron, Thiamine Mononitrate, Riboflavin, Folic Acid], Sugar, Palm and/or Canola Oil, Cocoa [Processed With Alkali], High Fructose Corn Syrup, Corn Flour, Salt, Dextrose, Sodium Bicarbonate, Soy Lecithin), Palm Oil, Palm Kernel Oil, Dextrose, Gelatin, Contains 2% or less of the following: Corn Starch, Modified Corn Starch, Blue 1, Natural and Artificial Flavor, Mono- and Diglycerides, Polyglycerol Esters of Fatty Acids, Powdered Sugar (Sugar, Corn Starch), Salt, Tetra Sodium Pyrophosphate. Contains: Milk, Wheat, Soy.']]></formula>
+            <formula><![CDATA[isChecked("CNC Marshmallow") = 'T' AND "Ingredient Statement" != 'INSERT CONFIDENTIAL INGREDIENTS']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -79,10 +79,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>exterior surface that is smooth with the minimal appearance of wrinkles or &quot;skinning&quot;, color should be a bright white with minimal opacity (exposed chocolate); tops of marshmallow should have a small tail; bottoms should have little to no wrinkling</valuetext>
+          <valuetext>INSERT CONFIDENTIAL APPEARANCE DESCRIPTION</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("CNC Marshmallow") = 'T' AND "Appearance" != 'exterior surface that is smooth with the minimal appearance of wrinkles or "skinning", color should be a bright white with minimal opacity (exposed chocolate); tops of marshmallow should have a small tail; bottoms should have little to no wrinkling']]></formula>
+            <formula><![CDATA[isChecked("CNC Marshmallow") = 'T' AND "Appearance" != 'INSERT CONFIDENTIAL APPEARANCE DESCRIPTION']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -114,10 +114,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>soft bite and chew with limited gummy texture on the marshmallow base; chocolate base should have cookie pieces particulate, flavor should have the traditional cookies and crème flavor with a hint of vanilla; manual texture should be free of excessive powder and not sticky to the touch</valuetext>
+          <valuetext>INSERT CONFIDENTIAL FLAVOR/TEXTURE DESCRIPTION</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("CNC Marshmallow") = 'T' AND "Flavor and Texture" != 'soft bite and chew with limited gummy texture on the marshmallow base; chocolate base should have cookie pieces particulate, flavor should have the traditional cookies and crème flavor with a hint of vanilla; manual texture should be free of excessive powder and not sticky to the touch']]></formula>
+            <formula><![CDATA[isChecked("CNC Marshmallow") = 'T' AND "Flavor and Texture" != 'INSERT CONFIDENTIAL FLAVOR/TEXTURE DESCRIPTION']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
