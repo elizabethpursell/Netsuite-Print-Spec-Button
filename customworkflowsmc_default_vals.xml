@@ -44,10 +44,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>graham cracker crumbs (enriched flour [wheat flour, malted barley flour, niacin, ferrous sulfate, thiamin, riboflavin, folic acid], graham flour, sugar, sunflower oil, molasses, salt, sodium bicarbonate, vanilla flavor, butter flavor, sodium sulfite), sugar, corn syrup, milk chocolate (sugar, whole milk powder, cocoa butter, unsweetened chocolate, soy lecithin, vanilla extract), water, palm and palm kernel oils, and contains 2% or less of the following: dextrose, gelatin, corn starch, natural and artificial flavors, blue 1, mono-and diglyerides, polyglycerol esters of fatty acids, tetra sodium pyrophosphate, salt.</valuetext>
+          <valuetext>INSERT CONFIDENTIAL INGREDIENTS</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("SMC Marshmallow") = 'T' AND "Ingredient Statement" != 'graham cracker crumbs (enriched flour [wheat flour, malted barley flour, niacin, ferrous sulfate, thiamin, riboflavin, folic acid], graham flour, sugar, sunflower oil, molasses, salt, sodium bicarbonate, vanilla flavor, butter flavor, sodium sulfite), sugar, corn syrup, milk chocolate (sugar, whole milk powder, cocoa butter, unsweetened chocolate, soy lecithin, vanilla extract), water, palm and palm kernel oils, and contains 2% or less of the following: dextrose, gelatin, corn starch, natural and artificial flavors, blue 1, mono-and diglyerides, polyglycerol esters of fatty acids, tetra sodium pyrophosphate, salt.']]></formula>
+            <formula><![CDATA[isChecked("SMC Marshmallow") = 'T' AND "Ingredient Statement" != 'INSERT CONFIDENTIAL INGREDIENTS']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -79,10 +79,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>exterior surface should have even distribution of crushed graham cracker pieces with a target of 90% coverage or better. Any visible marshmallow surface should be bright white and smooth with the minimal appearance of wrinkles or “skinning”.</valuetext>
+          <valuetext>INSERT CONFIDENTIAL APPEARANCE STATEMENT</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("SMC Marshmallow") = 'T' AND "Appearance" != 'exterior surface should have even distribution of crushed graham cracker pieces with a target of 90% coverage or better. Any visible marshmallow surface should be bright white and smooth with the minimal appearance of wrinkles or “skinning”.']]></formula>
+            <formula><![CDATA[isChecked("SMC Marshmallow") = 'T' AND "Appearance" != 'INSERT CONFIDENTIAL APPEARANCE STATEMENT']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
@@ -114,10 +114,10 @@
           <valueformula></valueformula>
           <valuejoinfield></valuejoinfield>
           <valueselect></valueselect>
-          <valuetext>external piece should have the traditional graham cracker flavor with mild sweetness, overall product should have a soft bite and chew with limited gummy texture on the marshmallow base; chocolate base should have a smooth bite and rich chocolate flavor, free of excessive grainy or powdery texture – product can be melted for additional evaluation;</valuetext>
+          <valuetext>INSERT CONFIDENTIAL FLAVOR/TEXTURE DESCRIPTION</valuetext>
           <valuetype>STATIC</valuetype>
           <initcondition>
-            <formula><![CDATA[isChecked("SMC Marshmallow") = 'T' AND "Flavor and Texture" != 'external piece should have the traditional graham cracker flavor with mild sweetness, overall product should have a soft bite and chew with limited gummy texture on the marshmallow base; chocolate base should have a smooth bite and rich chocolate flavor, free of excessive grainy or powdery texture – product can be melted for additional evaluation;']]></formula>
+            <formula><![CDATA[isChecked("SMC Marshmallow") = 'T' AND "Flavor and Texture" != 'INSERT CONFIDENTIAL FLAVOR/TEXTURE DESCRIPTION']]></formula>
             <type>VISUAL_BUILDER</type>
             <parameters>
               <parameter>
