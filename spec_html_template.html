@@ -174,9 +174,12 @@
 		<#if (record.custitem_as_wheat?is_boolean && record.custitem_as_wheat) || (record.custitem_as_wheat?is_string && record.custitem_as_wheat == 'T')>
 			<tr><td style="padding: 0px 0px 4px 0px">- Wheat</td></tr>
 		</#if>
-		<#if record.custitemnutrition_facts@url?length != 0>
+      	<#if record.custitemnutrition_facts@url?length != 0>
 			<tr><td style="padding: 14px 0px 4px 0px"><b>Nutritional Information</b></td></tr>
 			<tr><td><img src= "${record.custitemnutrition_facts@url}" style="width: auto; height: 90%;"/></td></tr>
+      	<#elseif record.custitemnutrition_facts_url@url?length != 0>
+			<tr><td style="padding: 14px 0px 4px 0px"><b>Nutritional Information</b></td></tr>
+			<tr><td><img src= "${record.custitemnutrition_facts_url@url}" style="width: auto; height: 90%;"/></td></tr>
 		</#if>
 	</table>
 <pbr />
@@ -270,33 +273,122 @@
 	</table>
 	<pbr />
 </#if>
-<#if (record.custitembom_image@url?length != 0) || (record.custitembom_id?has_content)>
-    <!--Adds packaging information to spec pdf-->
-	<table class="body" style="width: 100%; margin-top: 10px; padding: 0px 20px;">
-		<tr><th colspan="2" style="padding: 0px 0px 10px 0px"><span style="border-bottom: 1px solid black; padding-bottom: 0px;">Packaging</span></th></tr>
-	</table>
-</#if>
-<#if record.custitembom_image@url?length != 0>
-    <!--Adds bom image to spec pdf if applicable-->
-	<table class="body" style="width: 100%; margin-top: 0px; padding: 0px 20px;">
-		<tr><td><img src= "${record.custitembom_image@url}" style="width: 90%; height: auto;"/></td></tr>
-	</table>
-<#elseif record.custitembom_id?has_content>
-    <!--Adds bom components to spec pdf if applicable-->
-	<#if bom.component?has_content>
-		<table class="body" style="width: 100%; margin-top: 0px; padding: 0px 20px;">
-			<#list bom.component as component>
-				<tr><td style="padding: 0px 0px 4px 0px">${component.item}: ${component.description}</td></tr>
-			</#list>
-		</table>
-	</#if>
+    <!--Adds bom components to spec pdf-->
+<#if bom0?has_content || bom1?has_content || bom2?has_content || bom3?has_content>
+  	<table class="body" style="width: 100%; margin-top: 0px; padding: 0px 20px;">
+      	<tr><th style="padding: 0px 0px 4px 0px" colspan="2">Bill of Materials:</th></tr>
+        <tr>
+          	<td border=".5" style="padding: 4px;"><b>Item</b></td>
+			<td colspan="3" border=".5" style="padding: 4px;"><b>Description</b></td>
+			<td border=".5" style="padding: 4px;"><b>Quantity</b></td>
+		</tr>
+      	<!--Assigns list of record objects based on amount of boms added to template-->
+      	<#assign numSearches = record.custitemnumsearches?int>
+        <#if numSearches == 1>
+          	<#assign bomAssemblies = [bom0]/>
+        <#elseif numSearches = 2>
+          	<#assign bomAssemblies = [bom0, bom1]/>
+        <#elseif numSearches = 3>
+          	<#assign bomAssemblies = [bom0, bom1, bom2]/>
+        <#elseif numSearches = 4>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3]/>
+        <#elseif numSearches = 5>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4]/>
+        <#elseif numSearches = 6>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5]/>
+        <#elseif numSearches = 7>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6]/>
+        <#elseif numSearches = 8>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7]/>
+        <#elseif numSearches = 9>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8]/>
+        <#elseif numSearches = 10>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9]/>
+        <#elseif numSearches = 11>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10]/>
+        <#elseif numSearches = 12>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11]/>
+        <#elseif numSearches = 13>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12]/>
+        <#elseif numSearches = 14>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13]/>
+        <#elseif numSearches = 15>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14]/>
+        <#elseif numSearches = 16>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15]/>
+        <#elseif numSearches = 17>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16]/>
+        <#elseif numSearches = 18>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17]/>
+        <#elseif numSearches = 19>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18]/>
+        <#elseif numSearches = 20>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19]/>
+        <#elseif numSearches = 21>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20]/>
+        <#elseif numSearches = 22>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21]/>
+        <#elseif numSearches = 23>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22]/>
+        <#elseif numSearches = 24>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23]/>
+        <#elseif numSearches = 25>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24]/>
+        <#elseif numSearches = 26>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25]/>
+        <#elseif numSearches = 27>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26]/>
+        <#elseif numSearches = 28>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26, bom27]/>
+        <#elseif numSearches = 29>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26, bom27, bom28]/>
+        <#elseif numSearches = 30>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26, bom27, bom28, bom29]/>
+        <#elseif numSearches = 31>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26, bom27, bom28, bom29, bom30]/>
+        <#elseif numSearches = 32>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26, bom27, bom28, bom29, bom30, bom31]/>
+        <#elseif numSearches = 33>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26, bom27, bom28, bom29, bom30, bom31, bom32]/>
+        <#elseif numSearches = 34>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26, bom27, bom28, bom29, bom30, bom31, bom32, bom33]/>
+        <#elseif numSearches = 35>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26, bom27, bom28, bom29, bom30, bom31, bom32, bom33, bom34]/>
+        <#elseif numSearches = 36>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26, bom27, bom28, bom29, bom30, bom31, bom32, bom33, bom34, bom35]/>
+        <#elseif numSearches = 37>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26, bom27, bom28, bom29, bom30, bom31, bom32, bom33, bom34, bom35, bom36]/>
+        <#elseif numSearches = 38>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26, bom27, bom28, bom29, bom30, bom31, bom32, bom33, bom34, bom35, bom36, bom37]/>
+        <#elseif numSearches = 39>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26, bom27, bom28, bom29, bom30, bom31, bom32, bom33, bom34, bom35, bom36, bom37, bom38]/>
+        <#elseif numSearches = 40>
+          	<#assign bomAssemblies = [bom0, bom1, bom2, bom3, bom4, bom5, bom6, bom7, bom8, bom9, bom10, bom11, bom12, bom13, bom14, bom15, bom16, bom17, bom18, bom19, bom20, bom21, bom22, bom23, bom24, bom25, bom26, bom27, bom28, bom29, bom30, bom31, bom32, bom33, bom34, bom35, bom36, bom37, bom38, bom39]/>
+        </#if>
+        <!--Adds each bom record's data to spec pdf-->
+        <#list bomAssemblies as bom>
+          	<#if bom?has_content>
+          		<#list bom as bom_result>
+              		<tr>
+                      	<td style="padding: 4px; font-size: 8pt;" border=".5">${bom_result.component.item}</td>
+                      	<td colspan="3" style="padding: 4px; font-size: 8pt;" border=".5">${bom_result.component.description}</td>
+                      	<td style="padding: 4px; font-size: 8pt;" border=".5">${bom_result.component.quantity} ${bom_result.component.units}</td>
+          			</tr>
+            	</#list>
+            </#if>
+        </#list>
+  	</table>
+  	<pbr />
 </#if>
 <table class="body" style="width: 100%; margin-top: 10px; padding: 0px 20px;">
     <!--Adds pallet pattern image to spec pdf-->
 	<#if record.custitempallet_pattern@url?length != 0>
 		<tr><td style="padding: 4px 0px 10px 0px"><b><span style="border-bottom: 1px solid black; padding-bottom: 0px;">Pallet Pattern and Packaging</span></b></td></tr>
-		<tr><td><img src= "${record.custitempallet_pattern@url}" style="width: 90%; height: auto;"/></td></tr>
+      <tr><td><img src= "${record.custitempallet_pattern@url}"  dpi="175"/></td></tr>
 	</#if>
+  	<#if record.custitemti?has_content && record.custitemhi?has_content>
+      	<tr><td><b>TI: </b>${record.custitemti}&emsp;<b>HI: </b>${record.custitemhi}</td></tr>
+    </#if>
     <!--Adds storage conditions to spec pdf-->
 	<#if record.custitemstorage_conditions?has_content>
 		<tr><td><b>Storage and Distribution:</b> Ambient conditions, Approximately ${record.custitemstorage_conditions}°F</td></tr>
