@@ -1,6 +1,6 @@
 # Netsuite-Print-Spec-Button
-##Overview
-###Purpose
+## Overview
+### Purpose
 Generates pdf of spec using Netsuite data; includes bill of materials for the product
 
 The javascript files were used to create a custom button that would generate a pdf using the record's information. The javascript rendered the pdf using
