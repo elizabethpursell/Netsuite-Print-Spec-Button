@@ -64,7 +64,7 @@ Be sure to note the saved search IDs.
 ### Record Fields
 New custom fields will be needed to added to item records. Data that I used includes product information, nutrition facts, sensory descriptions, weight settings, and packaging information. I added all the fields to its own subtab on the item record form.
 ### Optional Autofill Feature
-- **Purpose:** reduces the entering of repetitive information over different products; creates a dropdown selection that will autofill the fields based on a custom record type
+- **Purpose:** reduces the input of repetitive information over different products; creates a dropdown selection that will autofill the fields based on a custom record type
 - **Example Record Types:** flavor, weight settings, pallet pattern
 - **Create Custom Record Type:** in NetSuite, navigate to Customization>List, Records, & Fields>Record Types>New; name your record type based on your desired dropdown options and save; reopen the new record type by navigating Customization>List, Records, & Fields>Record Types and selecting the record type; add new fields under the "Fields" subtab based on the fields that you want autofilled 
 - **Dropdown Field Setup:** create a new item record field by navigating Customization>List, Records, & Fields>Item Fields>New; name the field based on your record type; select the field type as "List/Record"; under the type selection, specify the List/Record as your custom record type and save
