@@ -26,7 +26,7 @@ Due to all the saved searches that are run to generate the complete bill of mate
 ### Saved Searches
 Be sure to note the saved search IDs.
 - **Search for Assemblies from BOM:**
-    - Function: loads assemblies as the correct record type; uses the array that holds the internal IDs for all the bill of materials components that are also assemblies
+    - Function: uses the array that holds the internal IDs for all the bill of materials components that are assemblies to load assembly records as the correct record type
     - Search Type: Item
     - Result Columns: Name, Type, Internal ID, Is Lot Numbered Item
     - Filters: Internal ID
