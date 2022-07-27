@@ -143,8 +143,8 @@ New custom fields will be needed to added to item records. Data that I used incl
 - **Customizing With Advanced PDF/HTML Template Features:** disable "Source Code" in the top right of the new template; use the textbox, table, fields, and other tools to modify the template
 ## References
 ### Images
-- **Example PDF: **[spec_example.pdf](https://github.com/elizabethpursell/Netsuite-Print-Spec-Button/files/9202914/spec_example.pdf)
-- **UML of Data Infrastructure: **![Data Infrastructure](https://user-images.githubusercontent.com/94419306/181353399-2d5b23a5-c283-4d49-9f13-6ff2ac90d7f6.jpg)
+- **Example PDF:** [spec_example.pdf](https://github.com/elizabethpursell/Netsuite-Print-Spec-Button/files/9202914/spec_example.pdf)
+- **UML of Data Infrastructure:** ![Data Infrastructure](https://user-images.githubusercontent.com/94419306/181353399-2d5b23a5-c283-4d49-9f13-6ff2ac90d7f6.jpg)
 ### Helpful Links
 - **SuiteScript 2.0:** https://docs.oracle.com/cd/E60665_01/netsuitecs_gs/NSAPI/NSAPI.pdf
 - **SuiteScript Modules:** https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/set_1502135122.html
