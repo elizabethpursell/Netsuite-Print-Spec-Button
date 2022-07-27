@@ -26,11 +26,11 @@ Due to all the saved searches that are run to generate the complete bill of mate
 ### Saved Searches
 Be sure to note the saved search IDs.
 - **Search for Assemblies from BOM:**
-    - Function: uses the array that holds the internal IDs for all the bill of materials components that are assemblies to load assembly records as the correct record type
-    - Search Type: Item
-    - Result Columns: Name, Type, Internal ID, Is Lot Numbered Item
-    - Filters: Internal ID
-    - Permissions: Public
+    - **Function:** uses the array that holds the internal IDs for all the bill of materials components that are assemblies to load assembly records as the correct record type
+    - **Search Type:** Item
+    - **Result Columns:** Name, Type, Internal ID, Is Lot Numbered Item
+    - **Filters:** Internal ID
+    - **Permissions:** Public
 - **Search for BOM for Spec Only Assemblies:**
     - Function: locates all the internal IDs of the components of a bill of materials revision that are assemblies; runs for each assembly in the array of assembly internal IDs; filters using the name of the assembly's current bill of materials revision
     - Search Type: Bill of Materials Revision
