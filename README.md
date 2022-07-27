@@ -32,35 +32,35 @@ Be sure to note the saved search IDs.
     - **Filters:** Internal ID
     - **Permissions:** Public
 - **Search for BOM for Spec Only Assemblies:**
-    - Function: locates all the internal IDs of the components of a bill of materials revision that are assemblies; runs for each assembly in the array of assembly internal IDs; filters using the name of the assembly's current bill of materials revision
-    - Search Type: Bill of Materials Revision
-    - Criteria: Component : Item Type is Assembly
-    - Result Columns: Bill of Materials, Name, Component : Base Units, Component : BoM Quantity, Component : BoM Quantity in Base Units, Component : Component Yield, Component : Description, Component : Internal ID Component : Item, Component : Item Source, Component : Item Subtype, Component : Item Type, Component : Line ID, Component : Quantity, Component : Quantity in Base Units, Component : Revision Name, Component : Units, Component : Weight
-    - Filters: Bill of Materials, Name, Component : Item, Internal ID
-    - Permissions: Public
+    - **Function:** locates all the internal IDs of the components of a bill of materials revision that are assemblies; runs for each assembly in the array of assembly internal IDs; filters using the name of the assembly's current bill of materials revision
+    - **Search Type:** Bill of Materials Revision
+    - **Criteria:** Component : Item Type is Assembly
+    - **Result Columns:** Bill of Materials, Name, Component : Base Units, Component : BoM Quantity, Component : BoM Quantity in Base Units, Component : Component Yield, Component : Description, Component : Internal ID Component : Item, Component : Item Source, Component : Item Subtype, Component : Item Type, Component : Line ID, Component : Quantity, Component : Quantity in Base Units, Component : Revision Name, Component : Units, Component : Weight
+    - **Filters:** Bill of Materials, Name, Component : Item, Internal ID
+    - **Permissions:** Public
 - **Search for BOM for Spec No Assemblies:**
-    - Function: locates all the internal IDs of the components of a bill of materials revision that are not assemblies; runs for each assembly in the array of assembly internal IDs; finds all the non-assembly component's in the bill of material, so they can be rendered in the PDF
-    - Search Type: Bill of Materials Revision
-    - Criteria: Component : Item Type is not Assembly
-    - Result Columns: Bill of Materials, Name, Component : Base Units, Component : BoM Quantity, Component : BoM Quantity in Base Units, Component : Component Yield, Component : Description, Component : Internal ID, Component : Item, Component : Item Source, Component : Item Subtype, Component : Item Type, Component : Line ID, Component : Quantity, Component : Quantity in Base Units, Component : Revision Name, Component : Units, Component : Weight, Internal ID
-    - Filters: Bill of Materials, Name, Component : Item, Internal ID
-    - Permissions: Public
+    - **Function:** locates all the internal IDs of the components of a bill of materials revision that are not assemblies; runs for each assembly in the array of assembly internal IDs; finds all the non-assembly component's in the bill of material, so they can be rendered in the PDF
+    - **Search Type:** Bill of Materials Revision
+    - **Criteria:** Component : Item Type is not Assembly
+    - **Result Columns:** Bill of Materials, Name, Component : Base Units, Component : BoM Quantity, Component : BoM Quantity in Base Units, Component : Component Yield, Component : Description, Component : Internal ID, Component : Item, Component : Item Source, Component : Item Subtype, Component : Item Type, Component : Line ID, Component : Quantity, Component : Quantity in Base Units, Component : Revision Name, Component : Units, Component : Weight, Internal ID
+    - **Filters:** Bill of Materials, Name, Component : Item, Internal ID
+    - **Permissions:** Public
 - **Search for Spec Revisions Asc:**
-    - Function: collects all the spec revision memos in ascending order according to date
-    - Search Type: Item
-    - Criteria: System Notes : New Value is not empty
-    - Sort By: System Notes : Date
-    - Result Columns: System Notes : Date, System Notes : Field, System Notes : New Value, System Notes : Set by
-    - Filters: Internal ID
-    - Permissions: Public
+    - **Function:** collects all the spec revision memos in ascending order according to date
+    - **Search Type:** Item
+    - **Criteria:** System Notes : New Value is not empty
+    - **Sort By:** System Notes : Date
+    - **Result Columns:** System Notes : Date, System Notes : Field, System Notes : New Value, System Notes : Set by
+    - **Filters:** Internal ID
+    - **Permissions:** Public
 - **Search for Spec Revisions Desc:**
-    - Function: collects all the spec revision memos in descending order according to date
-    - Search Type: Item
-    - Criteria: System Notes : New Value is not empty
-    - Sort By: System Notes : Date (Descending)
-    - Result Columns: System Notes : Date, System Notes : Field, System Notes : New Value, System Notes : Set by
-    - Filters: Internal ID
-    - Permissions: Public
+    - **Function:** collects all the spec revision memos in descending order according to date
+    - **Search Type:** Item
+    - **Criteria:** System Notes : New Value is not empty
+    - **Sort By:** System Notes : Date (Descending)
+    - **Result Columns:** System Notes : Date, System Notes : Field, System Notes : New Value, System Notes : Set by
+    - **Filters:** Internal ID
+    - **Permissions:** Public
 ### Record Fields
 New custom fields will be needed to added to item records. Data that I used includes product information, nutrition facts, sensory descriptions, weight settings, and packaging information. I added all the fields to its own subtab on the item record form.
 ### Optional Autofill Feature
