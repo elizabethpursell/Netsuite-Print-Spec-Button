@@ -154,13 +154,13 @@ New custom fields will be needed to added to item records. Data that I used incl
 - Adding Another Record to the Template:
 **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
 ## Creating the PDF Template
-**Opening New Template:** open Advanced PDF/HTML Templates by navigating Customization>Forms>Advanced PDF/HTML Templates; find a template that can be the foundation to the new template (I used a Bill of Materials type) and press "Customize"
-**Customizing With HTML:** enable "Source Code" in the top right of the new template; use this HTML code as a base; used FreeMarker to take data from records that were added to the template; use the name that is specified in the "templateName" parameter when the record was added to the template (ex. renderer.addSearchResults or renderer.addRecord); if data is getting pulled directly from record use the format ${templateName.fieldName}; if data is getting pulled from sublist use the format ${templateName.sublistName.fieldName}; press save when edits are completed
-**Customizing With Advanced PDF/HTML Template Features:** disable "Source Code" in the top right of the new template; use the textbox, table, fields, and other tools to modify the template
+- **Opening New Template:** open Advanced PDF/HTML Templates by navigating Customization>Forms>Advanced PDF/HTML Templates; find a template that can be the foundation to the new template (I used a Bill of Materials type) and press "Customize"
+- **Customizing With HTML:** enable "Source Code" in the top right of the new template; use this HTML code as a base; used FreeMarker to take data from records that were added to the template; use the name that is specified in the "templateName" parameter when the record was added to the template (ex. renderer.addSearchResults or renderer.addRecord); if data is getting pulled directly from record use the format {templateName.fieldName}; if data is getting pulled from sublist use the format {templateName.sublistName.fieldName}; press save when edits are completed
+- **Customizing With Advanced PDF/HTML Template Features:** disable "Source Code" in the top right of the new template; use the textbox, table, fields, and other tools to modify the template
 ## References
 ### Images
-- **Example PDF:**
-- **UML of Data Infrastructure:**
+- **Example PDF:**[spec_example.pdf](https://github.com/elizabethpursell/Netsuite-Print-Spec-Button/files/9202914/spec_example.pdf)
+- **UML of Data Infrastructure:**![Data Infrastructure](https://user-images.githubusercontent.com/94419306/181353399-2d5b23a5-c283-4d49-9f13-6ff2ac90d7f6.jpg)
 ### Helpful Links
 - **SuiteScript 2.0:** https://docs.oracle.com/cd/E60665_01/netsuitecs_gs/NSAPI/NSAPI.pdf
 - **SuiteScript Modules:** https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/set_1502135122.html
