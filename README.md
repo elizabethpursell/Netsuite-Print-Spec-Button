@@ -1,12 +1,7 @@
 # Netsuite-Print-Spec-Button
 ## Project Overview
 ### Purpose
-This custom print button allows for a product's specifications to be easily accessible for audits and production.
-The button pulls data from NetSuite records to render a PDF using the Advanced PDF/HTML Templates feature. Some
-information that can be displayed is the product information, nutrition facts, sensory descriptions, weight
-settings, packaging information, and a full bill of materials. This project also sets up a consistent data storage
-infrastructure using custom fields and record types. An optional feature is to create dropdown selections that can
-autofill the data fields.
+This custom print button allows for a product's specifications to be easily accessible for audits and production. The button pulls data from NetSuite records to render a PDF using the Advanced PDF/HTML Templates feature. Some information that can be displayed is the product information, nutrition facts, sensory descriptions, weight settings, packaging information, and a full bill of materials. This project also sets up a consistent data storage infrastructure using custom fields and record types. An optional feature is to create dropdown selections that can autofill the data fields.
 ### Features
 - Custom Print Button
 - PDF Template
@@ -24,20 +19,9 @@ autofill the data fields.
 - Saved Searches
 - NetSuite Custom Fields/Record Types
 ### Explanation of Bill of Materials Feature
-For the PDF, I wanted to present all the components in a product's bill of materials, without any assemblies. This
-meant that I would need to locate every component that is an assembly so that I could find those assemblies' 
-components as well. To do this, I created a saved search that would run for every assembly that is included in the
-product's bill of materials. From each search result, I added the names for the bill of materials revisions
-to an array. This array of bill of materials revision names would then be used in another saved search that locates
-all the non-assembly components in the bill of materials. I would use the results from this search to find the
-internal IDs of the item records and add those to an array, creating an array of all the internal IDs of all the
-components in the product's full bill of materials. It will only include non-assembly items. The array of internal
-IDs would then be used to load all the item records and add them to the PDF template for generation.
+For the PDF, I wanted to present all the components in a product's bill of materials, without any assemblies. This meant that I would need to locate every component that is an assembly so that I could find those assemblies' components as well. To do this, I created a saved search that would run for every assembly that is included in the product's bill of materials. For each assembly, I retrieved the name of the current bill of materials revision and used it to filter the search. The search would output the internal IDs of all the components that are assemblies. These IDs would be added to an array until all the assemblies were found.Then, I would use another saved search to find the internal IDs of all the non-assembly components of every assembly in the array. The array of non-assembly internal IDs would then be used to add all the item records to the PDF template for generation.
 ### Explanation of Overflow Programs
-Due to all the saved searches that are run to generate the complete bill of materials, the programs go over NetSuite's
-usage limits. To combat this, once the suitelet reached the limit, I would call another suitelet that would continue
-the code from where it left off. The suitelet would give the array of internal IDs and its current place in the array
-as parameters to the new suitelet. 
+Due to all the saved searches that are run to generate the complete bill of materials, the programs go over NetSuite's usage limits. To combat this, once the suitelet reached the limit, I would call another suitelet that would continue the code from where it left off. The suitelet would give the array of internal IDs and its current place in the array as parameters to the new suitelet. 
 ## Project Setup
 ### Saved Searches
 Be sure to note the saved search IDs.
