@@ -75,68 +75,68 @@ New custom fields will be needed to added to item records. Data that I used incl
 - **Adding a SuiteScript to the File Cabinet:** navigate Customization>Scripting>Scripts>New; next to the "Script File" dropdown, press the plus sign to upload a new SuiteScript file; select the NetSuite folder that you want to store the SuiteScript files in; under "Select File," press the "Choose File" button; select the SuiteScript file that you want to upload and press open; save and press the blue "Create Script Record" button; name the file, input a relevant ID, and save
 ## File Descriptions
 ### spec_button_es
-**Programming Languages:** JavaScript, SuiteScript 2.0
-**SuiteScript Type:** User Event Script, beforeLoad
-**Description:** creates the custom print button for all Lot Numbered Assembly Item records
-**Catering the Code to Your NetSuite:**
-- Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type
-- Changing the Button Label: find the function "context.form.addButton" and change the parameter "label" to the new label, keeping the new name in quotation marks
-- Calling a Different Client Script: find the function "context.form.clientScriptModulePath" and specify the path where your client script file is stored
-**Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; under "Applies To," select the record type that you want the button to appear on (I used Lot Numbered Assembly/Bill of Materials); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+- **Programming Languages:** JavaScript, SuiteScript 2.0
+- **SuiteScript Type:** User Event Script, beforeLoad
+- **Description:** creates the custom print button for all Lot Numbered Assembly Item records
+- **Catering the Code to Your NetSuite:**
+    - Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type
+    - Changing the Button Label: find the function "context.form.addButton" and change the parameter "label" to the new label, keeping the new name in quotation marks
+    - Calling a Different Client Script: find the function "context.form.clientScriptModulePath" and specify the path where your client script file is stored
+- **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; under "Applies To," select the record type that you want the button to appear on (I used Lot Numbered Assembly/Bill of Materials); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
 ### spec_button_click_cs
-**Programming Languages:** JavaScript, SuiteScript 2.0
-**SuiteScript Type:** Client Script, pageInit and onButtonClick
-**Description:** calls the first suitelet to render and generate the PDF when the button is pressed
-**Catering the Code to Your NetSuite:**
-- Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type
-- Calling a Different Suitelet: find the line "var suiteletURL = url.resolveScript" and change the scriptId and deploymentId to the information associated with the desired suitelet
-**Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Applies To," select the record type that you want the button to appear on (I used Lot Numbered Assembly/Bill of Materials); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+- **Programming Languages:** JavaScript, SuiteScript 2.0
+- **SuiteScript Type:** Client Script, pageInit and onButtonClick
+- **Description:** calls the first suitelet to render and generate the PDF when the button is pressed
+- **Catering the Code to Your NetSuite:**
+    - Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type
+    - Calling a Different Suitelet: find the line "var suiteletURL = url.resolveScript" and change the scriptId and deploymentId to the information associated with the desired suitelet
+- **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Applies To," select the record type that you want the button to appear on (I used Lot Numbered Assembly/Bill of Materials); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
 ### spec_suitelet
-**Programming Languages:** JavaScript, SuiteScript 2.0
-**SuiteScript Type:** Suitelet, onRequest
-**Description:** collects the internal IDs for all the components of the product's bill of materials that are assemblies
-**Catering the Code to Your NetSuite:**
-- Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type; change the saved searches to search under the correct record type; whenever there is a record load instance (record.load), change the record type to the correct one
-- Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
-- Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
-**Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+- **Programming Languages:** JavaScript, SuiteScript 2.0
+- **SuiteScript Type:** Suitelet, onRequest
+- **Description:** collects the internal IDs for all the components of the product's bill of materials that are assemblies
+- **Catering the Code to Your NetSuite:**
+    - Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type; change the saved searches to search under the correct record type; whenever there is a record load instance (record.load), change the record type to the correct one
+    - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
+    - Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
+- **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
 ### spec_suitelet_overflow
-**Programming Languages:** JavaScript, SuiteScript 2.0
-**SuiteScript Type:** Suitelet, onRequest
-**Description:** continues collecting the internal IDs for all the components of the product's bill of materials that are assemblies if the first suitelet does not have enough usage left
-**Catering the Code to Your NetSuite:**
-- Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type; change the saved searches to search under the correct record type; whenever there is a record load instance (record.load), change the record type to the correct one
-- Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
-- Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
-**Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+- **Programming Languages:** JavaScript, SuiteScript 2.0
+- **SuiteScript Type:** Suitelet, onRequest
+- **Description:** continues collecting the internal IDs for all the components of the product's bill of materials that are assemblies if the first suitelet does not have enough usage left
+- **Catering the Code to Your NetSuite:**
+    - Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type; change the saved searches to search under the correct record type; whenever there is a record load instance (record.load), change the record type to the correct one
+    - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
+    - Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
+- **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
 ### spec_suitelet_bom
-**Programming Languages:** JavaScript, SuiteScript 2.0
-**SuiteScript Type:** Suitelet, onRequest
-**Description:** collects the internal IDs for all the components of the product's bill of materials that are not assemblies
-**Catering the Code to Your NetSuite:**
-- Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type; change the saved searches to search under the correct record type; whenever there is a record load instance (record.load), change the record type to the correct one
-- Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
-- Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
-**Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+- **Programming Languages:** JavaScript, SuiteScript 2.0
+- **SuiteScript Type:** Suitelet, onRequest
+- **Description:** collects the internal IDs for all the components of the product's bill of materials that are not assemblies
+- **Catering the Code to Your NetSuite:**
+    - Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type; change the saved searches to search under the correct record type; whenever there is a record load instance (record.load), change the record type to the correct one
+    - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
+    - Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
+- **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
 ### spec_suitelet_bomoverflow
-**Programming Languages:** JavaScript, SuiteScript 2.0
-**SuiteScript Type:** Suitelet, onRequest
-**Description:** continues collecting the internal IDs for all the components of the product's bill of materials that are not assemblies if the third suitelet does not have enough usage left
-**Catering the Code to Your NetSuite:**
-- Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type; change the saved searches to search under the correct record type; whenever there is a record load instance (record.load), change the record type to the correct one
-- Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
-- Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
-**Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+- **Programming Languages:** JavaScript, SuiteScript 2.0
+- **SuiteScript Type:** Suitelet, onRequest
+- **Description:** continues collecting the internal IDs for all the components of the product's bill of materials that are not assemblies if the third suitelet does not have enough usage left
+- **Catering the Code to Your NetSuite:**
+    - Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type; change the saved searches to search under the correct record type; whenever there is a record load instance (record.load), change the record type to the correct one
+    - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
+    - Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
+- **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
 ### spec_suitelet_render
-**Programming Languages:** JavaScript, SuiteScript 2.0
-**SuiteScript Type:** Suitelet, onRequest
-**Description:** generates and renders PDF using array of bill of materials components' internal IDs, current record, and revision memos
-**Catering the Code to Your NetSuite:**
-- Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type; change the saved searches to search under the correct record type; whenever there is a record load instance (record.load), change the record type to the correct one
-- Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
-- Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
-- Adding Another Record to the Template:
-**Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
+- **Programming Languages:** JavaScript, SuiteScript 2.0
+- **SuiteScript Type:** Suitelet, onRequest
+- **Description:** generates and renders PDF using array of bill of materials components' internal IDs, current record, and revision memos
+- **Catering the Code to Your NetSuite:**
+    - Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type; change the saved searches to search under the correct record type; whenever there is a record load instance (record.load), change the record type to the correct one
+    - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
+    - Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
+    - Adding Another Record to the Template:
+- **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
 ## Creating the PDF Template
 - **Opening New Template:** open Advanced PDF/HTML Templates by navigating Customization>Forms>Advanced PDF/HTML Templates; find a template that can be the foundation to the new template (I used a Bill of Materials type) and press "Customize"
 - **Customizing With HTML:** enable "Source Code" in the top right of the new template; use this HTML code as a base; used FreeMarker to take data from records that were added to the template; use the name that is specified in the "templateName" parameter when the record was added to the template (ex. renderer.addSearchResults or renderer.addRecord); if data is getting pulled directly from record use the format {templateName.fieldName}; if data is getting pulled from sublist use the format {templateName.sublistName.fieldName}; press save when edits are completed
@@ -157,4 +157,3 @@ New custom fields will be needed to added to item records. Data that I used incl
 - Be sure to check the global permission in all of the saved searches
 - Go back to the script deployments to check that their status is "Released" and that their audience includes all roles
 - If a user cannot see the Spec Revision chart, check that the user's role has the Notes Tab permission
-## Reflection
