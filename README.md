@@ -14,6 +14,7 @@ This custom print button allows for a product's specifications to be easily acce
   - Modules: N/url, N/currentRecord, N/record, N/search, N/runtime, N/redirect, N/render
   - SuiteScript Types: Client Script, User Event Script, Suitelet
   - API Version: 2.x
+  - JSDoc Tags
 - Advanced PDF/HTML Templates
   - Languages: HTML, FreeMarker, XML, CSS
 - Saved Searches
