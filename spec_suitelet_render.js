@@ -41,54 +41,25 @@ define(['N/render', 'N/record', 'N/search'], function(render, record, search){
                 searchResult: bom_search_result
             });
         }
-        var revisions_search = search.create({    //creates search for revisions of current record with system notes
-            type: search.Type.SYSTEM_NOTE,
-            filters: [{
-                name: "newvalue",
-                operator: "isnotempty"
-            }, {
-                name: "recordid",
-                operator: "equalto",
-                values: [custom_id]
-            }],
-            columns: [{
-                name: "date",
-                sort: search.Sort.ASC     //dates in ascending order
-            }, {
-                name: "field"
-            }, {
-                name: "newvalue"
-            }, {
-                name: "name"
-            }]
+      	var revisions_search = search.load({        //loads search to find all spec revision memos, date ascending
+        	id: 'customsearchspec_rev_asc'
         });
+        var recordFilter = search.createFilter({
+        	name: 'internalid',
+        	operator: 'is',
+        	values: [custom_id]
+        });
+        revisions_search.filters.push(recordFilter);
         var revisions_results = revisions_search.run();
         var results = revisions_results.getRange(0, 1000);
         renderer.addSearchResults({         //adds search results to renderer
             templateName: "spec_revisions",
             searchResult: results
         });
-        var desc_revisions_search = search.create({    //creates search for revisions of current record with system notes
-            type: search.Type.SYSTEM_NOTE,
-            filters: [{
-                name: "newvalue",
-                operator: "isnotempty"
-            }, {
-                name: "recordid",
-                operator: "equalto",
-                values: [custom_id]
-            }],
-            columns: [{
-                name: "date",
-                sort: search.Sort.DESC     //dates in descending order
-            }, {
-                name: "field"
-            }, {
-                name: "newvalue"
-            }, {
-                name: "name"
-            }]
+      	var desc_revisions_search = search.load({        //loads search to find all spec revision memos, date descending
+        	id: 'customsearchspec_rev_desc'
         });
+        desc_revisions_search.filters.push(recordFilter);
         var desc_revisions_results = desc_revisions_search.run();
         var desc_results = desc_revisions_results.getRange(0, 1000);
         renderer.addSearchResults({         //adds search results to renderer
@@ -108,6 +79,7 @@ define(['N/render', 'N/record', 'N/search'], function(render, record, search){
             value: index,
             ignoreFieldChange: false
         });
+      	assemblyRecord.save();
         renderer.setTemplateByScriptId("CUSTTMPL_124_7232941_757");     //sets template as spec html template
         context.response.addHeader({
             name: 'Content-Type:',
