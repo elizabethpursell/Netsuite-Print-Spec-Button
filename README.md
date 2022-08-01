@@ -92,7 +92,7 @@ New custom fields will be needed to added to item records. Data that I used incl
     - Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type
     - Calling a Different Suitelet: find the line "var suiteletURL = url.resolveScript" and change the scriptId and deploymentId to the information associated with the desired suitelet
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Applies To," select the record type that you want the button to appear on (I used Lot Numbered Assembly/Bill of Materials); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
-### spec_suitelet
+### spec_suitelet_assmbly
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Suitelet, onRequest
 - **Description:** collects the internal IDs for all the components of the product's bill of materials that are assemblies
@@ -101,7 +101,7 @@ New custom fields will be needed to added to item records. Data that I used incl
     - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
     - Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
-### spec_suitelet_overflow
+### spec_suitelet_assmbly_overflow
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Suitelet, onRequest
 - **Description:** continues collecting the internal IDs for all the components of the product's bill of materials that are assemblies if the first suitelet does not have enough usage left
@@ -110,7 +110,7 @@ New custom fields will be needed to added to item records. Data that I used incl
     - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
     - Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
-### spec_suitelet_bom
+### spec_suitelet_boms
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Suitelet, onRequest
 - **Description:** collects the internal IDs for all the components of the product's bill of materials that are not assemblies
@@ -119,7 +119,7 @@ New custom fields will be needed to added to item records. Data that I used incl
     - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
     - Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
-### spec_suitelet_bomoverflow
+### spec_suitelet_boms_overflow
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Suitelet, onRequest
 - **Description:** continues collecting the internal IDs for all the components of the product's bill of materials that are not assemblies if the third suitelet does not have enough usage left
