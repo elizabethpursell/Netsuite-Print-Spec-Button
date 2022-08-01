@@ -1,17 +1,15 @@
 # Netsuite-Print-Spec-Button
 ## Project Overview
+![specbutton](https://user-images.githubusercontent.com/94419306/182214383-781dbabb-c589-4b1a-a2a1-365b7fe5deb0.PNG)
 ### Purpose
 This custom print button allows for a product's specifications to be easily accessible for audits and production. The button pulls data from NetSuite records to render a PDF using the Advanced PDF/HTML Templates feature. Some information that can be displayed is the product information, nutrition facts, sensory descriptions, weight settings, packaging information, and a full bill of materials. This project also sets up a consistent data infrastructure using custom fields and record types. An optional feature is to create dropdown selections that can autofill the data fields.
-
-
-![specbutton](https://user-images.githubusercontent.com/94419306/182214383-781dbabb-c589-4b1a-a2a1-365b7fe5deb0.PNG)
 ### Features
 - Custom Print Button
 - PDF Template
 - Complete Bill of Materials
 - Autofilled Fields
 - Reliable Data Storage
-- Revision Tracker
+- Revision Management
 - SuiteScript Usage Control
 - Data Input Optimization
 ### Prerequisites
@@ -26,8 +24,14 @@ This custom print button allows for a product's specifications to be easily acce
 - NetSuite Custom Fields/Record Types
 ### Explanation of Bill of Materials Feature
 For the PDF, I wanted to present all the components in a product's bill of materials, without any assemblies. This meant that I would need to locate every component that is an assembly so that I could find those assemblies' components as well. To do this, I created a saved search that would run for every assembly that is included in the product's bill of materials. For each assembly, I retrieved the name of the current bill of materials revision and used it to filter the search. The search would output the internal IDs of all the components that are assemblies. These IDs would be added to an array until all the assemblies were found. Then, I would use another saved search to find the internal IDs of all the non-assembly components of every assembly in the array. The array of non-assembly internal IDs would then be used to add all the item records to the PDF template for generation.
+
+![billofmaterials](https://user-images.githubusercontent.com/94419306/182221891-7e52bf55-ca55-43f7-a20f-e42cc4fcf95b.png)
 ### Explanation of Overflow Programs
-Due to all the saved searches that are run to generate the complete bill of materials, the programs go over NetSuite's usage limits. To combat this, once a suitelet reached the limit, I would call another suitelet that would continue the code from where it left off. The suitelet would give the array of internal IDs and its current place in the array as parameters to the new suitelet. 
+Due to all the saved searches that are run to generate the complete bill of materials, the programs go over NetSuite's usage limits. To combat this, once a suitelet reached the limit, I would call another suitelet that would continue the code from where it left off. The suitelet would give the array of internal IDs and its current place in the array as parameters to the new suitelet.
+### Explanation of Spec Revisions Chart
+An important part of auditing is keeping track of the changes to a product. This PDF automatically generates a chart of the revision history of the product using the System Notes. After a revision is made, the user inputs a summary of the modifications into a memo field in NetSuite, and the PDF template takes the memos from the System Notes. The System Notes track the person who made the changes, the date they occurred, and the changes that they made, so there is no need to document that information manually.
+
+![specrevisions](https://user-images.githubusercontent.com/94419306/182219223-37a17725-aea7-4dea-b610-0cb6db802d07.png)
 ## Project Setup
 ### Saved Searches
 Be sure to note the saved search IDs.
@@ -77,6 +81,7 @@ New custom fields will be needed to be added to item records. Data that I used i
 - **Storing Data in Record Types:** in edit mode on an item record, find your new dropdown field; next to the field there will be a plus sign that can be used to add new options to the dropdown; pressing the plus sign will open a menu to add a new record of your custom record type; name the record what you want the dropdown label to be; input the data into the fields and save; this dropdown selection can be used anytime in the future
 - **Autofill Configuration:** to source the item field data according to the dropdown selections, open the custom item field by navigating Customization>List, Records, & Fields>Item Fields and selecting the desired field; open the "Sourcing & Filtering" subtab; under "Source List," select the custom record type; under "Source From," select the field on the custom record type that you want to copy the information from; if you would not like to store field changes, unselect the "Store Value" checkbox; save and apply the change to forms; repeat for all fields that need to be autofilled
 - **Using the Selections:** open the item record that you would like to use the dropdown selections on and enter edit mode; find the autofill dropdowns and select the desired option; it should fill all the fields that are associated with the dropdown's record type
+- **UML of My Data Infrastructure:** ![Data Infrastructure](https://user-images.githubusercontent.com/94419306/181353399-2d5b23a5-c283-4d49-9f13-6ff2ac90d7f6.jpg)
 ### Uploading to NetSuite
 - **Adding a SuiteScript to the File Cabinet:** navigate Customization>Scripting>Scripts>New; next to the "Script File" dropdown, press the plus sign to upload a new SuiteScript file; select the NetSuite folder that you want to store the SuiteScript files in; under "Select File," press the "Choose File" button; select the SuiteScript file that you want to upload and press open; save and press the blue "Create Script Record" button; name the file, input a relevant ID, and save
 ## File Descriptions
@@ -150,7 +155,6 @@ New custom fields will be needed to be added to item records. Data that I used i
 ## References
 ### Images
 - **Example PDF:** [spec_example.pdf](https://github.com/elizabethpursell/Netsuite-Print-Spec-Button/files/9202914/spec_example.pdf)
-- **UML of Data Infrastructure:** ![Data Infrastructure](https://user-images.githubusercontent.com/94419306/181353399-2d5b23a5-c283-4d49-9f13-6ff2ac90d7f6.jpg)
 ### Helpful Links
 - **SuiteScript 2.0:** https://docs.oracle.com/cd/E60665_01/netsuitecs_gs/NSAPI/NSAPI.pdf
 - **SuiteScript Modules:** https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/set_1502135122.html
