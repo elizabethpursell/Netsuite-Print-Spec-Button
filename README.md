@@ -9,6 +9,8 @@ This custom print button allows for a product's specifications to be easily acce
 - Autofilled Fields
 - Reliable Data Storage
 - Revision Tracker
+- SuiteScript Usage Control
+- Data Input Optimization
 ### Prerequisites
 - SuiteScript/JavaScript
   - Modules: N/url, N/currentRecord, N/record, N/search, N/runtime, N/redirect, N/render
@@ -40,7 +42,7 @@ Be sure to note the saved search IDs.
     - **Filters:** Bill of Materials, Name, Component : Item, Internal ID
     - **Permissions:** Public
 - **Search for BOM for Spec No Assemblies:**
-    - **Function:** locates all the internal IDs of the components of a bill of materials revision that are not assemblies; runs for each assembly in the array of assembly internal IDs; finds all the non-assembly component's in the bill of material, so they can be rendered in the PDF
+    - **Function:** locates all the internal IDs of the components of a bill of materials revision that are not assemblies; runs for each assembly in the array of assembly internal IDs; finds all the non-assembly components in the bill of materials, so they can be rendered in the PDF
     - **Search Type:** Bill of Materials Revision
     - **Criteria:** Component : Item Type is not Assembly
     - **Result Columns:** Bill of Materials, Name, Component : Base Units, Component : BoM Quantity, Component : BoM Quantity in Base Units, Component : Component Yield, Component : Description, Component : Internal ID, Component : Item, Component : Item Source, Component : Item Subtype, Component : Item Type, Component : Line ID, Component : Quantity, Component : Quantity in Base Units, Component : Revision Name, Component : Units, Component : Weight, Internal ID
@@ -63,7 +65,7 @@ Be sure to note the saved search IDs.
     - **Filters:** Internal ID
     - **Permissions:** Public
 ### Record Fields
-New custom fields will be needed to added to item records. Data that I used includes product information, nutrition facts, sensory descriptions, weight settings, and packaging information. I added all the fields to its own subtab on the item record form.
+New custom fields will be needed to be added to item records. Data that I used includes product information, nutrition facts, sensory descriptions, weight settings, and packaging information. I added all the fields to its own subtab on the item record form.
 ### Optional Autofill Feature
 - **Purpose:** reduces the input of repetitive information over different products; creates a dropdown selection that will autofill the fields based on a custom record type
 - **Example Record Types:** flavor, weight settings, pallet pattern
@@ -75,7 +77,7 @@ New custom fields will be needed to added to item records. Data that I used incl
 ### Uploading to NetSuite
 - **Adding a SuiteScript to the File Cabinet:** navigate Customization>Scripting>Scripts>New; next to the "Script File" dropdown, press the plus sign to upload a new SuiteScript file; select the NetSuite folder that you want to store the SuiteScript files in; under "Select File," press the "Choose File" button; select the SuiteScript file that you want to upload and press open; save and press the blue "Create Script Record" button; name the file, input a relevant ID, and save
 ## File Descriptions
-### spec_button_es
+### spec_button_es.js
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** User Event Script, beforeLoad
 - **Description:** creates the custom print button for all Lot Numbered Assembly Item records
@@ -84,7 +86,7 @@ New custom fields will be needed to added to item records. Data that I used incl
     - Changing the Button Label: find the function "context.form.addButton" and change the parameter "label" to the new label, keeping the new name in quotation marks
     - Calling a Different Client Script: find the function "context.form.clientScriptModulePath" and specify the path where your client script file is stored
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; under "Applies To," select the record type that you want the button to appear on (I used Lot Numbered Assembly/Bill of Materials); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
-### spec_button_click_cs
+### spec_button_click_cs.js
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Client Script, pageInit and onButtonClick
 - **Description:** calls the first suitelet to render and generate the PDF when the button is pressed
@@ -92,7 +94,7 @@ New custom fields will be needed to added to item records. Data that I used incl
     - Applying to Different Record Type: change the JSDoc tag from "lotnumberedassemblyitem" to the relevant record type
     - Calling a Different Suitelet: find the line "var suiteletURL = url.resolveScript" and change the scriptId and deploymentId to the information associated with the desired suitelet
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Applies To," select the record type that you want the button to appear on (I used Lot Numbered Assembly/Bill of Materials); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
-### spec_suitelet_assmbly
+### spec_suitelet_assmbly.js
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Suitelet, onRequest
 - **Description:** collects the internal IDs for all the components of the product's bill of materials that are assemblies
@@ -101,7 +103,7 @@ New custom fields will be needed to added to item records. Data that I used incl
     - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
     - Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
-### spec_suitelet_assmbly_overflow
+### spec_suitelet_assmbly_overflow.js
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Suitelet, onRequest
 - **Description:** continues collecting the internal IDs for all the components of the product's bill of materials that are assemblies if the first suitelet does not have enough usage left
@@ -110,7 +112,7 @@ New custom fields will be needed to added to item records. Data that I used incl
     - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
     - Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
-### spec_suitelet_boms
+### spec_suitelet_boms.js
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Suitelet, onRequest
 - **Description:** collects the internal IDs for all the components of the product's bill of materials that are not assemblies
@@ -119,7 +121,7 @@ New custom fields will be needed to added to item records. Data that I used incl
     - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
     - Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
-### spec_suitelet_boms_overflow
+### spec_suitelet_boms_overflow.js
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Suitelet, onRequest
 - **Description:** continues collecting the internal IDs for all the components of the product's bill of materials that are not assemblies if the third suitelet does not have enough usage left
@@ -128,7 +130,7 @@ New custom fields will be needed to added to item records. Data that I used incl
     - Changing the Saved Search IDs: whenever there is a search load instance (search.load), change the parameter "id" to the correct search ID
     - Calling a Different Suitelet: find the function "redirect.toSuitelet" and change the scriptId and deploymentId to the information associated with the desired suitelet
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
-### spec_suitelet_render
+### spec_suitelet_render.js
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Suitelet, onRequest
 - **Description:** generates and renders PDF using array of bill of materials components' internal IDs, current record, and revision memos
