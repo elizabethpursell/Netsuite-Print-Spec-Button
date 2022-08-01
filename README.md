@@ -2,6 +2,9 @@
 ## Project Overview
 ### Purpose
 This custom print button allows for a product's specifications to be easily accessible for audits and production. The button pulls data from NetSuite records to render a PDF using the Advanced PDF/HTML Templates feature. Some information that can be displayed is the product information, nutrition facts, sensory descriptions, weight settings, packaging information, and a full bill of materials. This project also sets up a consistent data infrastructure using custom fields and record types. An optional feature is to create dropdown selections that can autofill the data fields.
+
+
+![specbutton](https://user-images.githubusercontent.com/94419306/182214383-781dbabb-c589-4b1a-a2a1-365b7fe5deb0.PNG)
 ### Features
 - Custom Print Button
 - PDF Template
