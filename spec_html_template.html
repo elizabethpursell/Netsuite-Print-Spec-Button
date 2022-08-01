@@ -29,8 +29,8 @@
 						<#if date_desc?has_content>
 							<#assign x = 'True'>
 							<#list date_desc as dates>
-								<#if (dates.field == 'Spec Revision Memo') && (x == 'True')>
-                                  	${dates.date?string("MMM dd, yyyy")}       <!--Adds last revision's date to header if it exists-->
+								<#if (dates.systemNotes.field == 'Spec Revision Memo') && (x == 'True')>
+                                  	${dates.systemNotes.date?string("MMM dd, yyyy")}       <!--Adds last revision's date to header if it exists-->
 									<#assign x = 'False'>
 								</#if>
 							</#list>
@@ -176,10 +176,10 @@
 		</#if>
       	<#if record.custitemnutrition_facts@url?length != 0>
 			<tr><td style="padding: 14px 0px 4px 0px"><b>Nutritional Information</b></td></tr>
-			<tr><td><img src= "${record.custitemnutrition_facts@url}" style="width: auto; height: 90%;"/></td></tr>
+			<tr><td><img src= "${record.custitemnutrition_facts@url}" dpi="150"/></td></tr>
       	<#elseif record.custitemnutrition_facts_url@url?length != 0>
 			<tr><td style="padding: 14px 0px 4px 0px"><b>Nutritional Information</b></td></tr>
-			<tr><td><img src= "${record.custitemnutrition_facts_url@url}" style="width: auto; height: 90%;"/></td></tr>
+			<tr><td><img src= "${record.custitemnutrition_facts_url@url}" dpi="150"/></td></tr>
 		</#if>
 	</table>
 <pbr />
@@ -203,14 +203,15 @@
 		<tr><td style="padding: 0px 0px 4px 0px">Ferrous: ${record.custitemferrous_limits?string(",##0.0")} mm</td></tr>
 		<tr><td style="padding: 0px 0px 4px 0px">Non Ferrous: ${record.custitemnonferrous_limits?string(",##0.0")} mm</td></tr>
 		<tr><td style="padding: 0px 0px 10px 0px">Stainless Steel: ${record.custitemsteel_limits?string(",##0.0")} mm</td></tr>
-	<#if (record.id == "563")>
+	<#if record.custitemselect_flavor == "CMC S'mores Kit">
         <!--Adds weight information of s'mores product to spec pdf if applicable-->
 		<tr><td style="padding: 10px 0px 4px 0px"><b><span style="border-bottom: 1px solid black; padding-bottom: 0px;">Net Wt of Marshmallow Package</span>:</b> ${record.custitemnet_wt}</td></tr>
 		<tr><td style="padding: 0px 0px 4px 0px">Recommended Checkweigher Settings (Net Weight): ${record.custitemweight_settings}</td></tr>
 		<tr><td style="padding: 0px 0px 4px 0px">MAV ${record.custitemmav} g; <b>Lowest Allowable Package Value: ${record.custitemmin_weight} g</b></td></tr>
 		<tr><td style="padding: 0px 0px 10px 0px"><span style="border-bottom: 1px solid black; padding-bottom: 0px;">Verify package tare has been accounted for</span></td></tr>
 		<tr><td style="padding: 10px 0px 4px 0px"><b><span style="border-bottom: 1px solid black; padding-bottom: 0px;">Shelf Life</span>:</b></td></tr>
-		<tr><td style="padding: 0px 0px 4px 0px"><b>Product: </b>${record.custitemshelf_life} From Date of Manufacture<br /></td></tr>
+      	<#if (record.custitemshelf_life_days % 365 != 0)><tr><td style="padding: 0px 0px 4px 0px"><b>Product: </b>${record.custitemshelf_life_days} Days From Date of Manufacture</td></tr>
+		<#elseif record.custitemshelf_life?has_content><tr><td style="padding: 0px 0px 4px 0px"><b>Product: </b>${record.custitemshelf_life} Year(s) From Date of Manufacture</td></tr></#if>
 		<tr><td style="padding: 0px 0px 4px 0px"><b>Overall Kit:</b> Based on Graham Cracker Date of Expiration</td></tr>
 	<#elseif (record.custitemnet_wt2?has_content)>
         <!--Adds weight information of products with trays to spec pdf if applicable-->
@@ -220,8 +221,9 @@
 		<tr><td style="padding: 0px 0px 4px 0px">MAV ${record.custitemmav} g; <b>Lowest Allowable Package Value: ${record.custitemmin_weight} g</b></td></tr>
 		<tr><td style="padding: 0px 0px 10px 0px"><span style="border-bottom: 1px solid black; padding-bottom: 0px;">Verify package tare has been accounted for<br /></span></td></tr>
 		<tr><td style="padding: 0px 0px 10px 0px"><b>Twelve Pack Tray Net Weight: ${record.custitemnet_wt2}</b></td></tr>
-		<tr><td style="padding: 10px 0px 4px 0px"><b><span style="border-bottom: 1px solid black; padding-bottom: 0px;">Shelf Life</span>:</b></td></tr>
-		<tr><td style="padding: 0px 0px 4px 0px">${record.custitemshelf_life} From Date of Manufacture</td></tr>
+      	<tr><td style="padding: 10px 0px 4px 0px"><b><span style="border-bottom: 1px solid black; padding-bottom: 0px;">Shelf Life</span>:</b></td></tr>
+		<#if (record.custitemshelf_life_days % 365 != 0)><tr><td style="padding: 0px 0px 4px 0px">${record.custitemshelf_life_days} Days From Date of Manufacture</td></tr>
+		<#elseif record.custitemshelf_life?has_content><tr><td style="padding: 0px 0px 4px 0px">${record.custitemshelf_life} Year(s) From Date of Manufacture</td></tr></#if>
 	<#else>
         <!--Adds weight information to spec pdf-->
 		<tr><td style="padding: 10px 0px 4px 0px"><b><span style="border-bottom: 1px solid black; padding-bottom: 0px;">Net Wt</span>:</b> ${record.custitemnet_wt}</td></tr>
@@ -229,7 +231,8 @@
 		<tr><td style="padding: 0px 0px 4px 0px">MAV ${record.custitemmav} g; <b>Lowest Allowable Package Value: ${record.custitemmin_weight} g</b></td></tr>
 		<tr><td style="padding: 0px 0px 10px 0px"><span style="border-bottom: 1px solid black; padding-bottom: 0px;">Verify package tare has been accounted for</span></td></tr>
 		<tr><td style="padding: 10px 0px 4px 0px"><b><span style="border-bottom: 1px solid black; padding-bottom: 0px;">Shelf Life</span>:</b></td></tr>
-		<tr><td style="padding: 0px 0px 4px 0px">${record.custitemshelf_life} From Date of Manufacture</td></tr>
+      	<#if (record.custitemshelf_life_days % 365 != 0)><tr><td style="padding: 0px 0px 4px 0px">${record.custitemshelf_life_days} Days From Date of Manufacture</td></tr>
+		<#elseif record.custitemshelf_life?has_content><tr><td style="padding: 0px 0px 4px 0px">${record.custitemshelf_life} Year(s) From Date of Manufacture</td></tr></#if>
 	</#if>
 </table>
 
@@ -265,10 +268,10 @@
 			<td style="padding: 0px 0px 4px 0px">${record.custitembest_before_date}<br /></td>
 		</tr>
 		<#if (record.custitembest_before_date2@url?length != 0)>
-			<tr><td><img src= "${record.custitembest_before_date2@url}" style="width: 90%; height: auto;"/></td></tr>
+			<tr><td><img src= "${record.custitembest_before_date2@url}" dpi="125"/></td></tr>
 		</#if>
 		<#if (record.custitembest_before_date3@url?length != 0)>
-			<tr><td><img src= "${record.custitembest_before_date3@url}" style="width: 90%; height: auto;"/></td></tr>
+			<tr><td><img src= "${record.custitembest_before_date3@url}" dpi="125"/></td></tr>
 		</#if>
 	</table>
 	<pbr />
@@ -384,7 +387,10 @@
     <!--Adds pallet pattern image to spec pdf-->
 	<#if record.custitempallet_pattern@url?length != 0>
 		<tr><td style="padding: 4px 0px 10px 0px"><b><span style="border-bottom: 1px solid black; padding-bottom: 0px;">Pallet Pattern and Packaging</span></b></td></tr>
-      <tr><td><img src= "${record.custitempallet_pattern@url}"  dpi="175"/></td></tr>
+      	<#if record.custitemselect_pallet == "6 Case Master Wraps"><tr><td><img src= "${record.custitempallet_pattern@url}" dpi="175"/></td></tr>
+        <#elseif record.custitemselect_pallet == "2 Pack Singles 12 Ct DRC"><tr><td><img src= "${record.custitempallet_pattern@url}" dpi="75"/></td></tr>
+        <#else><tr><td><img src= "${record.custitempallet_pattern@url}" dpi="125"/></td></tr>
+        </#if>
 	</#if>
   	<#if record.custitemti?has_content && record.custitemhi?has_content>
       	<tr><td><b>TI: </b>${record.custitemti}&emsp;<b>HI: </b>${record.custitemhi}</td></tr>
@@ -405,11 +411,11 @@
 	</tr>
   	<#if spec_revisions?has_content>
 		<#list spec_revisions as result>
-			<#if (result.field == 'Spec Revision Memo')>
+			<#if (result.systemNotes.field == 'Spec Revision Memo')>
 				<tr>
-					<td style="padding: 3px; font-size: 8pt;" border=".5">${result.date?string("MMM dd, yyyy")}</td>
-					<td colspan="4" style="padding: 3px; font-size: 8pt;" border=".5">${result.newvalue}</td>
-					<td colspan="2" style="padding: 3px; font-size: 8pt;" border=".5">${result.name}</td>
+					<td style="padding: 3px; font-size: 8pt;" border=".5">${result.systemNotes.date?string("MMM dd, yyyy")}</td>
+					<td colspan="4" style="padding: 3px; font-size: 8pt;" border=".5">${result.systemNotes.newvalue}</td>
+					<td colspan="2" style="padding: 3px; font-size: 8pt;" border=".5">${result.systemNotes.name}</td>
               	</tr>
 			</#if>
 		</#list>
