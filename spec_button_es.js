@@ -1,6 +1,6 @@
 define([], function(){
   /**
-    * 
+    *
     * @NApiVersion 2.x
     * @NScriptType UserEventScript
     * @appliedtorecord lotnumberedassemblyitem
