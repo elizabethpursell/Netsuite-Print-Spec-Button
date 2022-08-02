@@ -25,9 +25,13 @@ This custom print button allows for a product's specifications to be easily acce
 ### Explanation of Bill of Materials Feature
 For the PDF, I wanted to present all the components in a product's bill of materials, without any assemblies. This meant that I would need to locate every component that is an assembly so that I could find those assemblies' components as well. To do this, I created a saved search that would run for every assembly that is included in the product's bill of materials. For each assembly, I retrieved the name of the current bill of materials revision and used it to filter the search. The search would output the internal IDs of all the components that are assemblies. These IDs would be added to an array until all the assemblies were found. Then, I would use another saved search to find the internal IDs of all the non-assembly components of every assembly in the array. The array of non-assembly internal IDs would then be used to add all the item records to the PDF template for generation.
 
-![billofmaterials](https://user-images.githubusercontent.com/94419306/182221891-7e52bf55-ca55-43f7-a20f-e42cc4fcf95b.png)
+![Spec Button Flow Chart (1)](https://user-images.githubusercontent.com/94419306/182412669-b7ea2ba1-f74d-4d67-b59b-ad4aebb50a28.png)
+
 ### Explanation of Overflow Programs
 Due to all the saved searches that are run to generate the complete bill of materials, the programs go over NetSuite's usage limits. To combat this, once a suitelet reached the limit, I would call another suitelet that would continue the code from where it left off. The suitelet would give the array of internal IDs and its current place in the array as parameters to the new suitelet.
+
+![Spec Button Flow Chart](https://user-images.githubusercontent.com/94419306/182373121-989b58ff-07a0-4c0c-8167-336ed24857e6.png)
+
 ### Explanation of Spec Revisions Chart
 An important part of auditing is keeping track of the changes to a product. This PDF automatically generates a chart of the revision history of the product using the System Notes. After a revision is made, the user inputs a summary of the modifications into a memo field in NetSuite, and the PDF template takes the memos from the System Notes. The System Notes track the person who made the changes, the date they occurred, and the changes that they made, so there is no need to document that information manually.
 
@@ -155,6 +159,7 @@ New custom fields will be needed to be added to item records. Data that I used i
 ## References
 ### Images
 - **Example PDF:** [spec_example.pdf](https://github.com/elizabethpursell/Netsuite-Print-Spec-Button/files/9202914/spec_example.pdf)
+- **Bill of Materials Format:** ![billofmaterials](https://user-images.githubusercontent.com/94419306/182221891-7e52bf55-ca55-43f7-a20f-e42cc4fcf95b.png)
 ### Helpful Links
 - **SuiteScript 2.0:** https://docs.oracle.com/cd/E60665_01/netsuitecs_gs/NSAPI/NSAPI.pdf
 - **SuiteScript Modules:** https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/set_1502135122.html
