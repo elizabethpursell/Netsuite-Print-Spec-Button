@@ -160,6 +160,7 @@ New custom fields will be needed to be added to item records. Data that I used i
 ### Images
 - **Example PDF:** [spec_example.pdf](https://github.com/elizabethpursell/Netsuite-Print-Spec-Button/files/9202914/spec_example.pdf)
 - **Bill of Materials Format:** 
+
 ![billofmaterials](https://user-images.githubusercontent.com/94419306/182221891-7e52bf55-ca55-43f7-a20f-e42cc4fcf95b.png)
 ### Helpful Links
 - **SuiteScript 2.0:** https://docs.oracle.com/cd/E60665_01/netsuitecs_gs/NSAPI/NSAPI.pdf
